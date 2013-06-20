@@ -80,7 +80,7 @@ class User implements UserInterface
 
     public function __construct()
     {
-        $this->roles = array();
+        $this->roles = array('ROLE_USER');
         $this->salt = md5(rand(1000, 9999).time());
     }
 
