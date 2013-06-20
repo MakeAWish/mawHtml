@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Circle
  *
- * @ORM\Table()
+ * @ORM\Table("circles")
  * @ORM\Entity(repositoryClass="Sch\WlBundle\Entity\Repository\CircleRepository")
  */
 class Circle
