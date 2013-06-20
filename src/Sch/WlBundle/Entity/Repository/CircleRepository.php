@@ -1,6 +1,6 @@
 <?php
 
-namespace Sch\WlBundle\Entity;
+namespace Sch\WlBundle\Repository\Entity;
 
 use Doctrine\ORM\EntityRepository;
 

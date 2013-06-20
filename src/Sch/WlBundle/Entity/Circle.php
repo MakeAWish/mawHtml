@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Circle
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Sch\WlBundle\Entity\CircleRepository")
+ * @ORM\Entity(repositoryClass="Sch\WlBundle\Entity\Repository\CircleRepository")
  */
 class Circle
 {
@@ -32,7 +32,7 @@ class Circle
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -48,14 +48,14 @@ class Circle
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
