@@ -296,4 +296,27 @@ class User implements UserInterface
     {
 
     }
+
+    /**
+     * Set circle
+     *
+     * @param \Sch\WlBundle\Entity\Circle $circle
+     * @return User
+     */
+    public function setCircle(\Sch\WlBundle\Entity\Circle $circle = null)
+    {
+        $this->circle = $circle;
+    
+        return $this;
+    }
+
+    /**
+     * Get circle
+     *
+     * @return \Sch\WlBundle\Entity\Circle 
+     */
+    public function getCircle()
+    {
+        return $this->circle;
+    }
 }
