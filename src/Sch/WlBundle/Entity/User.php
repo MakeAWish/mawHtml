@@ -77,6 +77,12 @@ class User
      */
     private $roles;
 
+    public function __construct()
+    {
+        $this->roles = array();
+        $this->salt = md5(rand(1000, 9999).time());
+    }
+
 
     /**
      * Get id
