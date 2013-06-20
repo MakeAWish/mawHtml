@@ -1,0 +1,5 @@
+sch_wl:
+    resource: "@SchWlBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
