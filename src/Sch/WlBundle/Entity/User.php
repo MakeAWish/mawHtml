@@ -306,17 +306,22 @@ class User implements UserInterface
     public function setCircle(\Sch\WlBundle\Entity\Circle $circle = null)
     {
         $this->circle = $circle;
-    
+
         return $this;
     }
 
     /**
      * Get circle
      *
-     * @return \Sch\WlBundle\Entity\Circle 
+     * @return \Sch\WlBundle\Entity\Circle
      */
     public function getCircle()
     {
         return $this->circle;
+    }
+
+    public function __sleep()
+    {
+        return array('id', 'username');
     }
 }
