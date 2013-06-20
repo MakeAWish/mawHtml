@@ -14,6 +14,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface
 {
     /**
+     * @ORM\ManyToOne(targetEntity="Circle", inversedBy="users")
+     */
+    private $circle;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")

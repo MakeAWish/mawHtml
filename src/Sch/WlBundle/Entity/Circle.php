@@ -13,6 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Circle
 {
     /**
+     * @ORM\OneToMany(targetEntity="User", mappedBy="circle")
+     */
+    private $users;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
