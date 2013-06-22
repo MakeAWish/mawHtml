@@ -3,5 +3,10 @@
 {% block nav_wish_class %}active{% endblock %}
 
 {% block content %}
-Wishlist de {{app.user.username}}, cercle {{app.user.circle.name}}
+Wishlist de {{app.user.username}}, cercles :
+<ul>
+{% for circle in app.user.circles %}
+    <li>{{ circle.name }}</li>
+{% endfor %}
+</ul>
 {% endblock %}

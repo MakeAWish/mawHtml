@@ -13,8 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Circle
 {
     /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="circle")
-     */
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="groups")
+     **/
     private $users;
 
     /**
@@ -73,7 +73,7 @@ class Circle
     {
         $this->users = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Add users
      *
@@ -83,7 +83,7 @@ class Circle
     public function addUser(\Sch\WlBundle\Entity\User $users)
     {
         $this->users[] = $users;
-    
+
         return $this;
     }
 
@@ -100,7 +100,7 @@ class Circle
     /**
      * Get users
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getUsers()
     {

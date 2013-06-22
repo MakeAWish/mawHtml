@@ -14,9 +14,10 @@ use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 class User implements AdvancedUserInterface
 {
     /**
-     * @ORM\ManyToOne(targetEntity="Circle", inversedBy="users")
-     */
-    private $circle;
+     * @ORM\ManyToMany(targetEntity="Circle", inversedBy="users")
+     * @ORM\JoinTable(name="users_circles")
+     **/
+    private $circles;
 
     /**
      * @var integer
@@ -372,5 +373,38 @@ class User implements AdvancedUserInterface
     public function isEnabled()
     {
         return $this->isActive;
+    }
+
+    /**
+     * Add circles
+     *
+     * @param \Sch\WlBundle\Entity\Circle $circles
+     * @return User
+     */
+    public function addCircle(\Sch\WlBundle\Entity\Circle $circles)
+    {
+        $this->circles[] = $circles;
+    
+        return $this;
+    }
+
+    /**
+     * Remove circles
+     *
+     * @param \Sch\WlBundle\Entity\Circle $circles
+     */
+    public function removeCircle(\Sch\WlBundle\Entity\Circle $circles)
+    {
+        $this->circles->removeElement($circles);
+    }
+
+    /**
+     * Get circles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCircles()
+    {
+        return $this->circles;
     }
 }
