@@ -7,4 +7,6 @@ login:
     defaults:  { _controller: SchWlBundle:Security:login }
 login_check:
     pattern:   /login_check
+logout:
+    pattern:   /logout
 
