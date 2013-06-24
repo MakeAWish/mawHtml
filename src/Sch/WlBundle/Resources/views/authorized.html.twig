@@ -21,8 +21,13 @@
                     <a href="#">Giftlist</a>
                 </li>
                 <li class="{% block nav_profile_class %}{% endblock %}">
-                    <a href="#">Profil</a>
+                    <a href="#">Mon Profil</a>
                 </li>
+                {% if is_granted('ROLE_ADMIN') %}
+                <li class="{% block nav_admin_class %}{% endblock %}">
+                    <a href="{{path('sch_wl_user_index')}}">Administration</a>
+                </li>
+                {% endif %}
                 <li>
                     <a href="{{path('logout')}}">Déconnexion</a>
                 </li>
