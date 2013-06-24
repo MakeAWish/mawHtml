@@ -304,29 +304,6 @@ class User implements AdvancedUserInterface
 
     }
 
-    /**
-     * Set circle
-     *
-     * @param \Sch\WlBundle\Entity\Circle $circle
-     * @return User
-     */
-    public function setCircle(\Sch\WlBundle\Entity\Circle $circle = null)
-    {
-        $this->circle = $circle;
-
-        return $this;
-    }
-
-    /**
-     * Get circle
-     *
-     * @return \Sch\WlBundle\Entity\Circle
-     */
-    public function getCircle()
-    {
-        return $this->circle;
-    }
-
     public function __sleep()
     {
         return array('id', 'username');
@@ -384,7 +361,7 @@ class User implements AdvancedUserInterface
     public function addCircle(\Sch\WlBundle\Entity\Circle $circles)
     {
         $this->circles[] = $circles;
-    
+
         return $this;
     }
 
@@ -401,7 +378,7 @@ class User implements AdvancedUserInterface
     /**
      * Get circles
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getCircles()
     {
