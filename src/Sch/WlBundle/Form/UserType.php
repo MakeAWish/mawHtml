@@ -19,7 +19,7 @@ class UserType extends AbstractType
             ->add('lastname')
             ->add('birthdate')
             ->add('roles')
-            ->add('circle')
+            ->add('circles')
         ;
     }
 
