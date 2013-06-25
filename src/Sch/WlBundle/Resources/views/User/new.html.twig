@@ -1,6 +1,8 @@
-{% extends '::base.html.twig' %}
+{% extends 'SchWlBundle::authorized.html.twig' %}
 
-{% block body -%}
+{% block nav_admin_class %}active{% endblock %}
+
+{% block content %}
 <h1>User creation</h1>
 
 <form action="{{ path('sch_wl_user_create') }}" method="post" {{ form_enctype(form) }}>
