@@ -13,6 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Wish
 {
     /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="wishes")
+     */
+    private $user;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
@@ -90,5 +95,28 @@ class Wish
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Sch\WlBundle\Entity\User $user
+     * @return Wish
+     */
+    public function setUser(\Sch\WlBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Sch\WlBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

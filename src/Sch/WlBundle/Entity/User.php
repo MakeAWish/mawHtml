@@ -14,6 +14,11 @@ use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 class User implements AdvancedUserInterface
 {
     /**
+     * @ORM\OneToMany(targetEntity="Wish", mappedBy="user")
+     */
+    private $wishes;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Circle", inversedBy="users")
      * @ORM\JoinTable(name="users_circles")
      **/
@@ -383,5 +388,38 @@ class User implements AdvancedUserInterface
     public function getCircles()
     {
         return $this->circles;
+    }
+
+    /**
+     * Add wishes
+     *
+     * @param \Sch\WlBundle\Entity\Wish $wishes
+     * @return User
+     */
+    public function addWishe(\Sch\WlBundle\Entity\Wish $wishes)
+    {
+        $this->wishes[] = $wishes;
+    
+        return $this;
+    }
+
+    /**
+     * Remove wishes
+     *
+     * @param \Sch\WlBundle\Entity\Wish $wishes
+     */
+    public function removeWishe(\Sch\WlBundle\Entity\Wish $wishes)
+    {
+        $this->wishes->removeElement($wishes);
+    }
+
+    /**
+     * Get wishes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getWishes()
+    {
+        return $this->wishes;
     }
 }
