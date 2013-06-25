@@ -1,0 +1,22 @@
+{% extends 'SchWlBundle::authorized.html.twig' %}
+
+{% block nav_admin_class %}active{% endblock %}
+
+{% block content %}
+    <h1>Category creation</h1>
+
+    <form action="{{ path('sch_wl_category_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit">Create</button>
+        </p>
+    </form>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('sch_wl_category_index') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}
