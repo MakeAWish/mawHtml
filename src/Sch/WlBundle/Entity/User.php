@@ -399,7 +399,7 @@ class User implements AdvancedUserInterface
     public function addWishe(\Sch\WlBundle\Entity\Wish $wishes)
     {
         $this->wishes[] = $wishes;
-    
+
         return $this;
     }
 
@@ -416,10 +416,15 @@ class User implements AdvancedUserInterface
     /**
      * Get wishes
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getWishes()
     {
         return $this->wishes;
+    }
+
+    public function __toString()
+    {
+        return $this->username;
     }
 }

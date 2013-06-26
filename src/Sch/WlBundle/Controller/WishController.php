@@ -28,8 +28,10 @@ class WishController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $usr= $this->get('security.context')->getToken()->getUser();
 
-        $entities = $em->getRepository('SchWlBundle:Wish')->findAll();
+
+        $entities = $em->getRepository('SchWlBundle:Wish')->findAllForUser($usr);
 
         return array(
             'entities' => $entities,
@@ -44,7 +46,11 @@ class WishController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity  = new Wish();
+        $usr= $this->get('security.context')->getToken()->getUser();
+
+        $entity = new Wish();
+        $entity->setUser($usr);
+
         $form = $this->createForm(new WishType(), $entity);
         $form->bind($request);
 
