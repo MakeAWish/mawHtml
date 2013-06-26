@@ -8,29 +8,7 @@
     <link href="{{ asset("bundles/schwl/css/bootstrap-responsive.min.css") }}" rel="stylesheet">
     <link href="{{ asset("bundles/schwl/css/maw.css") }}" rel="stylesheet">
 <body>
-    <div class="container-narrow">
-        <div class="masthead">
-            <ul class="nav nav-pills pull-right">
-                <li class="{% block nav_home_class %}{% endblock %}">
-                    <a href="{{path('sch_wl_default_index')}}">Accueil</a>
-                </li>
-                <li class="{% block nav_about_class %}{% endblock %}">
-                    <a href="{{path('sch_wl_default_about')}}">A propos</a>
-                </li>
-                <li class="{% block nav_contact_class %}{% endblock %}">
-                    <a href="{{path('sch_wl_default_contact')}}">Contact</a>
-                </li>
-            </ul>
-            <h3 class="muted">Make A Wish</h3>
-        </div>
-        <hr>
-        {% block content %}{% endblock %}
-        <hr>
-        <div class="footer">
-            <p>&copy; SchapSchap Team 2013</p>
-        </div>
-    </div>
-
+    {% block body %}{% endblock %}
     <script src="{{ asset("bundles/schwl/js/jquery.js") }}"></script>
     <script src="{{ asset("bundles/schwl/js/bootstrap.js") }}"></script>
 </body>

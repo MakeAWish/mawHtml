@@ -29,7 +29,7 @@ class CategoryController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('SchWlBundle:Category')->findAll();
+        $entities = $em->getRepository('SchWlBundle:Category')->findAllOrdered();
 
         return array(
             'entities' => $entities,

@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Make A Wish</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset("bundles/schwl/css/bootstrap.min.css") }}" rel="stylesheet">
-    <link href="{{ asset("bundles/schwl/css/bootstrap-responsive.min.css") }}" rel="stylesheet">
-    <link href="{{ asset("bundles/schwl/css/maw.css") }}" rel="stylesheet">
-<body>
+{% extends 'SchWlBundle::base.html.twig' %}
+
+{% block body %}
     <div class="container-narrow">
         <div class="masthead">
             <ul class="nav nav-pills pull-right">
@@ -55,8 +48,4 @@
             <p>&copy; SchapSchap Team 2013</p>
         </div>
     </div>
-
-    <script src="{{ asset("bundles/schwl/js/jquery.js") }}"></script>
-    <script src="{{ asset("bundles/schwl/js/bootstrap.js") }}"></script>
-</body>
-</html>
+{% endblock %}

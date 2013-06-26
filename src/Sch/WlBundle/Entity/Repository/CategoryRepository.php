@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class CategoryRepository extends EntityRepository
 {
+    public function findAllOrdered()
+    {
+        $query = $this->createQueryBuilder('d')
+        ->addOrderBy('d.name', 'ASC')
+        ->addOrderBy('d.weight', 'DESC')
+        ->getQuery();
+
+        return $query->getResult();
+    }
 }
