@@ -18,6 +18,11 @@ class Wish
     private $user;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Category")
+     */
+    private $category;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
@@ -106,14 +111,14 @@ class Wish
     public function setUser(\Sch\WlBundle\Entity\User $user = null)
     {
         $this->user = $user;
-    
+
         return $this;
     }
 
     /**
      * Get user
      *
-     * @return \Sch\WlBundle\Entity\User 
+     * @return \Sch\WlBundle\Entity\User
      */
     public function getUser()
     {
