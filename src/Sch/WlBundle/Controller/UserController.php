@@ -17,6 +17,19 @@ use Sch\WlBundle\Form\UserType;
  */
 class UserController extends Controller
 {
+    private function encodePassword(User $entity)
+    {
+        // Renew salt
+        $entity->setSalt(md5(rand(1000, 9999).time()));
+
+        // Encode password
+        $factory = $this->get('security.encoder_factory');
+        $encoder = $factory->getEncoder($entity);
+        $password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
+        $entity->setPassword($password);
+
+        return $entity;
+    }
 
     /**
      * Lists all User entities.
@@ -49,6 +62,9 @@ class UserController extends Controller
         $form->bind($request);
 
         if ($form->isValid()) {
+
+            $entity = $this->encodePassword($entity);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -154,6 +170,9 @@ class UserController extends Controller
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
+
+            $entity = $this->encodePassword($entity);
+
             $em->persist($entity);
             $em->flush();
 
