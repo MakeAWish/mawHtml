@@ -1,0 +1,29 @@
+body, .row.header {
+	padding-top: 10px;
+}
+
+h1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.nav.nav-pills {
+	margin-bottom: 30px;
+}
+
+.icon {
+	width: 20px;
+	display: inline-block;
+	margin: 15px auto;
+}
+
+
+.navbar2 {
+    display: inline-block;
+    float: right;
+}
+
+.container-narrow {
+    width: 900px;
+    margin: 0 auto;
+}
