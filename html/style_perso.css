@@ -105,21 +105,31 @@ h2 {
 	clear: both;
 }
 
-.icone {
+.icone, .calendrier {
 	display: inline-block;
 	float: right;
 	width: 50px;
 	height: 50px;
+	margin-bottom: 10px;
 }
 
-.cuisine, .enfant, .sport, .voyage, .jeux, .multimedia, .culture, .mode, .bricolage, .maison {
+.event {
+	background-color: #06a0a8;
+}
+
+.cuisine, .enfant, .sport, .voyage, .jeux, .multimedia, .culture, .mode, .bricolage, .maison, .event {
 	border-radius: 5px;
-	padding: 5px;
+	padding: 8px 12px;
 	margin-bottom: 20px;
+	color: white;
+}
+
+.calendrier {
+	background: url(calendrier.png);
 }
 
 .culture {
-	background-color: #96A6FF;
+	background-color: #00505b;
 }
 
 .iculture {
@@ -127,7 +137,7 @@ h2 {
 }
 
 .jeux {
-	background-color: #8B60FF;
+	background-color: #061b54;
 }
 
 .ijeux {
@@ -135,7 +145,7 @@ h2 {
 }
 
 .multimedia {
-	background-color: silver;
+	background-color: #242621;
 }
 
 .imultimedia {
@@ -143,7 +153,7 @@ h2 {
 }
 
 .cuisine {
-	background-color: #ffc6df;
+	background-color: #ff1d74;
 }
 
 .icuisine {
@@ -151,7 +161,7 @@ h2 {
 }
 
 .bricolage {
-	background-color: #8EFF9B;
+	background-color: #014900;
 }
 
 .ibricolage {
@@ -159,7 +169,7 @@ h2 {
 }
 
 .mode {
-	background-color: #FFE566;
+	background-color: #f4b301;
 }
 
 .imode {
@@ -167,7 +177,7 @@ h2 {
 }
 
 .voyage {
-	background-color: #AADBFF;
+	background-color: #006bbe;
 }
 
 .ivoyage {
@@ -175,7 +185,7 @@ h2 {
 }
 
 .maison {
-	background-color: #FF7F7F;
+	background-color: #b91b1c;
 }
 
 .imaison {
@@ -183,7 +193,7 @@ h2 {
 }
 
 .sport {
-	background-color: #FFB27F;
+	background-color: #ff7d23;
 }
 
 .isport {
@@ -191,7 +201,7 @@ h2 {
 }
 
 .enfant {
-	background-color: #E3ADFF;
+	background-color: #681cb4;
 }
 
 .ienfant {
