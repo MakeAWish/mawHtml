@@ -3,10 +3,10 @@
 {% block nav_admin_class %}active{% endblock %}
 
 {% block content %}
-<h1>User list</h1>
+    <h1>User list</h1>
 
-<table class="records_list">
-    <thead>
+    <table class="records_list">
+        <thead>
         <tr>
             <th>Id</th>
             <th>Username</th>
@@ -20,46 +20,46 @@
             <th>Isactive</th>
             <th>Actions</th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         {% for entity in entities %}
-        <tr>
-            <td>
-                <a href="{{ path('sch_wl_user_show', { 'id': entity.id }) }}">{{ entity.id }}</a>
-            </td>
-            <td>{{ entity.username }}</td>
-            <td>{{ entity.password }}</td>
-            <td>{{ entity.salt }}</td>
-            <td>{{ entity.email }}</td>
-            <td>{{ entity.firstname }}</td>
-            <td>{{ entity.lastname }}</td>
-            <td>
-                {% if entity.birthdate %}{{ entity.birthdate|date('Y-m-d H:i:s') }}{% endif %}
-            </td>
-            <td>
-                {% for role in entity.roles %}
-                <span>{{ role }}</span>
-                {% endfor %}
-            </td>
-            <td>{{ entity.isActive }}</td>
-            <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('sch_wl_user_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('sch_wl_user_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <a href="{{ path('sch_wl_user_show', { 'id': entity.id }) }}">{{ entity.id }}</a>
+                </td>
+                <td>{{ entity.username }}</td>
+                <td>{{ entity.password }}</td>
+                <td>{{ entity.salt }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.firstname }}</td>
+                <td>{{ entity.lastname }}</td>
+                <td>
+                    {% if entity.birthdate %}{{ entity.birthdate|date('Y-m-d H:i:s') }}{% endif %}
+                </td>
+                <td>
+                    {% for role in entity.roles %}
+                        <span>{{ role }}</span>
+                    {% endfor %}
+                </td>
+                <td>{{ entity.isActive }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('sch_wl_user_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('sch_wl_user_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
         {% endfor %}
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
-<ul>
-    <li>
-        <a href="{{ path('sch_wl_user_new') }}">Create a new entry</a>
-    </li>
-</ul>
+    <ul>
+        <li>
+            <a href="{{ path('sch_wl_user_new') }}">Create a new entry</a>
+        </li>
+    </ul>
 {% endblock %}

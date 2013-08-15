@@ -1,51 +1,44 @@
 {% extends 'SchWlBundle::base.html.twig' %}
 
 {% block body %}
-    <div class="container-narrow">
-        <div class="masthead">
-            <ul class="nav nav-pills pull-right">
-                <li class="{% block nav_wish_class %}{% endblock %}">
-                    <a href="{{path('sch_wl_wish_index')}}">Wishlist</a>
-                </li>
-                <li class="{% block nav_offer_class %}{% endblock %}">
-                    <a href="#">Offrir</a>
-                </li>
-                <li class="{% block nav_gift_class %}{% endblock %}">
-                    <a href="#">Giftlist</a>
-                </li>
-                <li class="{% block nav_profile_class %}{% endblock %}">
-                    <a href="#">Mon Profil</a>
-                </li>
-                {% if is_granted('ROLE_ADMIN') %}
+    <div class="row">
+        <div class="pull-right">
+            <a class="label label-default" href="#">Aide</a>
+            <a class="label label-default" href="{{ path('fos_user_security_logout') }}" title="Bye bye baby !">Déconnexion</a>
+        </div>
+    </div>
+    <div class="masthead">
+        <h1>Make a wish</h1>
+
+        <ul class="nav navbar-nav nav-justified">
+            <li class="{% block nav_wish_class %}{% endblock %}"><a
+                        href="{{ path('sch_wl_wish_index') }}">Wihlist</a></li>
+            <li class="{% block nav_gift_class %}{% endblock %}"><a href="#">Giftlist</a></li>
+            <li class="{% block nav_event_class %}{% endblock %}"><a href="#">Evénements</a></li>
+            <li class="{% block nav_profile_class %}{% endblock %}"><a href="#">Profil</a></li>
+            {% if is_granted('ROLE_ADMIN') %}
                 <li class="dropdown {% block nav_admin_class %}{% endblock %}">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Administration <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                <li>
-                                    <a href="{{path('sch_wl_user_index')}}">Utilisateurs</a>
-                                </li>
-                                <li>
-                                    <a href="{{path('sch_wl_circle_index')}}">Cercles</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="{{path('sch_wl_category_index')}}">Catégories</a>
-                                </li>
-                            </ul>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Administration <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li>
+                            <a href="{{ path('sch_wl_user_index') }}">Utilisateurs</a>
                         </li>
-                {% endif %}
-                <li>
-                    <a href="{{path('fos_user_security_logout')}}">Déconnexion</a>
+                        <li>
+                            <a href="{{ path('sch_wl_circle_index') }}">Cercles</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{{ path('sch_wl_category_index') }}">Catégories</a>
+                        </li>
+                    </ul>
                 </li>
-            </ul>
-            <h3 class="muted">Make A Wish</h3>
-        </div>
-        <hr>
-        {% block content %}{% endblock %}
-        <hr>
-        <div class="footer">
-            <p>&copy; SchapSchap Team 2013</p>
-        </div>
+            {% endif %}
+        </ul>
+    </div>
+    {% block content %}{% endblock %}
+    <div class="footer">
+        <p>&copy; SchapSchap Team 2013</p>
     </div>
 {% endblock %}

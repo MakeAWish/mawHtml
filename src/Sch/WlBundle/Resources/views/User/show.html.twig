@@ -3,10 +3,10 @@
 {% block nav_admin_class %}active{% endblock %}
 
 {% block content %}
-<h1>User</h1>
+    <h1>User</h1>
 
-<table class="record_properties">
-    <tbody>
+    <table class="record_properties">
+        <tbody>
         <tr>
             <th>Id</th>
             <td>{{ entity.id }}</td>
@@ -42,29 +42,29 @@
         <tr>
             <th>Roles</th>
             <td>{% for role in entity.roles %}
-                <span>{{ role }}</span>
+                    <span>{{ role }}</span>
                 {% endfor %}</td>
         </tr>
         <tr>
             <th>Isactive</th>
             <td>{{ entity.isActive }}</td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('sch_wl_user_index') }}">Back to the list</a>
-    </li>
-    <li>
-        <a href="{{ path('sch_wl_user_edit', { 'id': entity.id }) }}">Edit</a>
-    </li>
-    <li>
-        <form action="{{ path('sch_wl_user_delete', { 'id': entity.id }) }}" method="post">
-            <input type="hidden" name="_method" value="DELETE" />
-            {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('sch_wl_user_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('sch_wl_user_edit', { 'id': entity.id }) }}">Edit</a>
+        </li>
+        <li>
+            <form action="{{ path('sch_wl_user_delete', { 'id': entity.id }) }}" method="post">
+                <input type="hidden" name="_method" value="DELETE"/>
+                {{ form_widget(delete_form) }}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    </ul>
 {% endblock %}
