@@ -10,32 +10,39 @@
     <div class="masthead">
         <h1>Make a wish</h1>
 
-        <ul class="nav navbar-nav nav-justified">
-            <li class="{% block nav_wish_class %}{% endblock %}"><a
-                        href="{{ path('sch_wl_wish_index') }}">Wihlist</a></li>
-            <li class="{% block nav_gift_class %}{% endblock %}"><a href="#">Giftlist</a></li>
-            <li class="{% block nav_event_class %}{% endblock %}"><a href="#">Evénements</a></li>
-            <li class="{% block nav_profile_class %}{% endblock %}"><a href="#">Profil</a></li>
-            {% if is_granted('ROLE_ADMIN') %}
-                <li class="dropdown {% block nav_admin_class %}{% endblock %}">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Administration <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                        <li>
-                            <a href="{{ path('sch_wl_user_index') }}">Utilisateurs</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('sch_wl_circle_index') }}">Cercles</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="{{ path('sch_wl_category_index') }}">Catégories</a>
+        <div class="navbar">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="{% block nav_wish_class %}{% endblock %}"><a
+                                    href="{{ path('sch_wl_wish_index') }}">Wihlist</a></li>
+                        <li class="{% block nav_gift_class %}{% endblock %}"><a href="#">Giftlist</a></li>
+                        <li class="{% block nav_event_class %}{% endblock %}"><a href="#">Evénements</a></li>
+                        <li class="{% block nav_profile_class %}{% endblock %}"><a href="#">Profil</a></li>
+                    </ul>
+                    {# if is_granted('ROLE_ADMIN') #}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ path('sch_wl_user_index') }}">Utilisateurs</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('sch_wl_circle_index') }}">Cercles</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{{ path('sch_wl_category_index') }}">Catégories</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-                </li>
-            {% endif %}
-        </ul>
+                    {# endif #}
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
     </div>
     {% block content %}{% endblock %}
     <div class="footer">
