@@ -1,0 +1,5 @@
+Sch\WlBundle\Entity\Circle:
+    circle0:
+        name: Famille
+    circle1:
+        name: Amis

@@ -29,12 +29,11 @@ class Category
     private $name;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="weight", type="integer")
-     */
-    private $weight;
-
+    31	     * @var string
+    32	     *
+    33	     * @ORM\Column(name="slug", type="string", unique=true, length=255)
+    34	     */
+    private $slug;
 
     /**
      * Get id
@@ -69,26 +68,35 @@ class Category
         return $this->name;
     }
 
+
     /**
-     * Set weight
+     * Get slug
      *
-     * @param integer $weight
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $name
      * @return Category
      */
-    public function setWeight($weight)
+    public function setSlug($slug)
     {
-        $this->weight = $weight;
+        $this->slug = $slug;
 
         return $this;
     }
 
     /**
-     * Get weight
-     *
-     * @return integer
+     * @return string
      */
-    public function getWeight()
+    public function __toString()
     {
-        return $this->weight;
+        return $this->getName();
     }
 }

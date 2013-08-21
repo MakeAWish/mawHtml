@@ -1,0 +1,31 @@
+Sch\WlBundle\Entity\Category:
+    cat0:
+        name: Culture
+        slug: culture
+    cat1:
+        name: Bricolage
+        slug: bricolage
+    cat2:
+        name: Jeux
+        slug: jeux
+    cat3:
+        name: Mode
+        slug: mode
+    cat4:
+        name: Multimédia
+        slug: multimedia
+    cat5:
+        name: Voyages
+        slug: voyages
+    cat6:
+        name: Cuisine
+        slug: cuisine
+    cat7:
+        name: Maison
+        slug: maison
+    cat8:
+        name: Sports
+        slug: sport
+    cat9:
+        name: Enfants
+        slug: enfants

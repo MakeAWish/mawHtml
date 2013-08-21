@@ -1,16 +1,31 @@
 {% extends 'SchWlBundle::authorized.html.twig' %}
 
+{% block head_extend %}
+    <link href="{{ asset("bundles/schwl/css/addwish.css") }}" rel="stylesheet">
+{% endblock head_extend %}
+
 {% block nav_wish_class %}active{% endblock %}
 
 {% block content %}
-    <h1>Wish creation</h1>
+    <div class="container">
+        <form action="{{ path('sch_wl_wish_create') }}" method="post" {{ form_enctype(form) }}>
+            {{ form_label(form.title, 'Titre', { 'attr': {'class': 'form-control'} }) }}
+            {{ form_widget(form.title, { 'attr': {'class': 'form-control'} }) }}
 
-    <form action="{{ path('sch_wl_wish_create') }}" method="post" {{ form_enctype(form) }}>
-        {{ form_widget(form) }}
-        <p>
-            <button type="submit">Create</button>
-        </p>
-    </form>
+            {{ form_label(form.description, 'Description', { 'attr': {'class': 'form-control'} }) }}
+            {{ form_widget(form.description, { 'attr': {'class': 'form-control'} }) }}
+
+            {{ form_label(form.category, 'Catégorie', { 'attr': {'class': 'form-control'} }) }}
+            {{ form_widget(form.category, { 'attr': {'class': 'form-control'} }) }}
+
+            {{ form_label(form.user, 'Utilisateur', { 'attr': {'class': 'form-control'} }) }}
+            {{ form_widget(form.user, { 'attr': {'class': 'form-control'} }) }}
+
+            {{ form_rest(form) }}
+
+            <button class="btn btn-default btn-primary btn-block" type="submit">Ajouter</button>
+        </form>
+    </div>
 
     <ul class="record_actions">
         <li>

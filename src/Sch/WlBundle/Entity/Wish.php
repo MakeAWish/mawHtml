@@ -124,4 +124,27 @@ class Wish
     {
         return $this->user;
     }
+
+    /**
+     * Set category
+     *
+     * @param \Sch\WlBundle\Entity\Category $category
+     * @return Wish
+     */
+    public function setCategory(\Sch\WlBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+    
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \Sch\WlBundle\Entity\Category 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
 }

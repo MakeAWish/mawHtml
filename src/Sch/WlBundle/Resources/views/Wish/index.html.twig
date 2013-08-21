@@ -3,50 +3,28 @@
 {% block nav_wish_class %}active{% endblock %}
 
 {% block content %}
-    <div class="jumbotron">
-        <!-- <h2>Ma Wishlist</h2> -->
-        <p class="lead">Voici votre wishlist, n'hésitez pas à la mettre à jour au gré de vos envies !!!</p>
+<div class="jumbotron">
+    <!-- <h2>Ma Wishlist</h2> -->
+    <p class="lead">Voici votre wishlist, n'hésitez pas à la mettre à jour au gré de vos envies !!!</p>
 
-        <p><a class="btn btn-default btn-success" href="#">Ajouter un voeu</a></p>
+    <p><a class="btn btn-default btn-success" href="{{ path('sch_wl_wish_new') }}">Ajouter un voeu</a></p>
+</div>
+<div class="body-content">
+    <div class="row">
+        <div class="col-lg-6">
+            {% for wish in entities %}
+                {% if loop.index0%2 == false %}
+                    {% include "SchWlBundle:Wish:onewish.html.twig" %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-lg-6">
+            {% for wish in entities %}
+                {% if loop.index0%2 %}
+                    {% include "SchWlBundle:Wish:onewish.html.twig" %}
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
-
-    <table class="records_list">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>User</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('sch_wl_wish_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.title }}</td>
-                <td>{{ entity.description }}</td>
-                <td>{{ entity.user.username }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('sch_wl_wish_show', { 'id': entity.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('sch_wl_wish_edit', { 'id': entity.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('sch_wl_wish_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+</div>
 {% endblock %}
