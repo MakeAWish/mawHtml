@@ -1,16 +1,33 @@
 {% extends 'SchWlBundle::authorized.html.twig' %}
 
+{% block head_extend %}
+    <!-- <link href="{{ asset("bundles/schwl/css/addwish.css") }}" rel="stylesheet"> -->
+{% endblock head_extend %}
+
 {% block nav_wish_class %}active{% endblock %}
 
 {% block content %}
-    <h1>Wish edit</h1>
+    <form action="{{ path('sch_wl_wish_update', { 'id': entity.id }) }} method=" post" {{ form_enctype(form) }}>
+    <input type="hidden" name="_method" value="PUT"/>
+    <div class="form-group">
+        {{ form_label(form.title, 'Titre', { 'attr': {'class': 'form-control'} }) }}
+        {{ form_widget(form.title, { 'attr': {'class': 'form-control'} }) }}
 
-    <form action="{{ path('sch_wl_wish_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-        <input type="hidden" name="_method" value="PUT"/>
-        {{ form_widget(edit_form) }}
-        <p>
-            <button type="submit">Edit</button>
-        </p>
+        {{ form_label(form.description, 'Description', { 'attr': {'class': 'form-control'} }) }}
+        {{ form_widget(form.description, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.category, 'Catégorie', { 'attr': {'class': 'form-control'} }) }}
+        {{ form_widget(form.category, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <div class="form-group">
+            {{ form_label(form.user, 'Utilisateur', { 'attr': {'class': 'form-control'} }) }}
+            {{ form_widget(form.user, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+    {% endif %}
+
+    <button class="btn btn-default btn-success btn-block" type="submit">Modifier</button>
     </form>
 
     <ul class="record_actions">

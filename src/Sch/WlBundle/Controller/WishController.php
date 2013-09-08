@@ -77,7 +77,12 @@ class WishController extends Controller
      */
     public function newAction()
     {
+        $user = $this->get('security.context')->getToken()->getUser();
+
+        /** @var Wish $entity */
         $entity = new Wish();
+        $entity->setUser($user);
+
         $form   = $this->createForm(new WishType(), $entity);
 
         return array(
@@ -133,7 +138,7 @@ class WishController extends Controller
 
         return array(
             'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
