@@ -28,7 +28,7 @@ class WishController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $usr= $this->get('security.context')->getToken()->getUser();
+        $usr = $this->get('security.context')->getToken()->getUser();
 
 
         $entities = $em->getRepository('SchWlBundle:Wish')->findAllForUser($usr);
@@ -37,6 +37,7 @@ class WishController extends Controller
             'entities' => $entities,
         );
     }
+
     /**
      * Creates a new Wish entity.
      *
@@ -46,7 +47,7 @@ class WishController extends Controller
      */
     public function createAction(Request $request)
     {
-        $usr= $this->get('security.context')->getToken()->getUser();
+        $usr = $this->get('security.context')->getToken()->getUser();
 
         $entity = new Wish();
         $entity->setUser($usr);
@@ -64,7 +65,7 @@ class WishController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -87,7 +88,7 @@ class WishController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -111,7 +112,7 @@ class WishController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -137,8 +138,8 @@ class WishController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -177,6 +178,7 @@ class WishController extends Controller
             'delete_form' => $deleteForm->createView(),
         );
     }
+
     /**
      * Deletes a Wish entity.
      *
@@ -214,7 +216,6 @@ class WishController extends Controller
     {
         return $this->createFormBuilder(array('id' => $id))
             ->add('id', 'hidden')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

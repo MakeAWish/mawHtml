@@ -10,6 +10,7 @@
 namespace Sch\WlBundle\Controller;
 
 
-class OfferController {
+class OfferController
+{
 
 }

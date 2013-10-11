@@ -12,8 +12,7 @@ class CircleType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('users')
-        ;
+            ->add('users');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

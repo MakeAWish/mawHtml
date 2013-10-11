@@ -19,8 +19,7 @@ class UserType extends AbstractType
             ->add('lastname')
             ->add('birthdate')
             ->add('roles')
-            ->add('circles')
-        ;
+            ->add('circles');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

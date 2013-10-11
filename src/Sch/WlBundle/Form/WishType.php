@@ -13,7 +13,9 @@ class WishType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('category');
+            ->add('user')
+            ->add('category')
+        ;
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

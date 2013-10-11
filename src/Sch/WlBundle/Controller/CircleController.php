@@ -35,6 +35,7 @@ class CircleController extends Controller
             'entities' => $entities,
         );
     }
+
     /**
      * Creates a new Circle entity.
      *
@@ -44,7 +45,7 @@ class CircleController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity  = new Circle();
+        $entity = new Circle();
         $form = $this->createForm(new CircleType(), $entity);
         $form->bind($request);
 
@@ -58,7 +59,7 @@ class CircleController extends Controller
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -72,11 +73,11 @@ class CircleController extends Controller
     public function newAction()
     {
         $entity = new Circle();
-        $form   = $this->createForm(new CircleType(), $entity);
+        $form = $this->createForm(new CircleType(), $entity);
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -100,7 +101,7 @@ class CircleController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -126,8 +127,8 @@ class CircleController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -161,11 +162,12 @@ class CircleController extends Controller
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
+
     /**
      * Deletes a Circle entity.
      *
@@ -203,7 +205,6 @@ class CircleController extends Controller
     {
         return $this->createFormBuilder(array('id' => $id))
             ->add('id', 'hidden')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

@@ -134,14 +134,14 @@ class Wish
     public function setCategory(\Sch\WlBundle\Entity\Category $category = null)
     {
         $this->category = $category;
-    
+
         return $this;
     }
 
     /**
      * Get category
      *
-     * @return \Sch\WlBundle\Entity\Category 
+     * @return \Sch\WlBundle\Entity\Category
      */
     public function getCategory()
     {

@@ -12,8 +12,7 @@ class CategoryType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('weight')
-        ;
+            ->add('weight');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

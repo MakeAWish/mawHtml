@@ -15,10 +15,10 @@ class WishRepository extends EntityRepository
     public function findAllForUser($user, $limit = 50)
     {
         $query = $this->createQueryBuilder('d')
-        ->where('d.user = :user')
-        ->setParameter('user', $user)
-        ->setMaxResults($limit)
-        ->getQuery();
+            ->where('d.user = :user')
+            ->setParameter('user', $user)
+            ->setMaxResults($limit)
+            ->getQuery();
 
         return $query->getResult();
     }

@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Nelmio\Alice\ORM\Doctrine;
 use Nelmio\Alice\Loader\Yaml;
 
-class AliceLoadFixturesCommand  extends ContainerAwareCommand
+class AliceLoadFixturesCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
