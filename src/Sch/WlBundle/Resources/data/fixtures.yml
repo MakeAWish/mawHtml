@@ -29,3 +29,47 @@ Sch\WlBundle\Entity\Category:
     cat9:
         name: Enfants
         slug: enfants
+
+Sch\WlBundle\Entity\Circle:
+    bCircle:
+        name: Team B
+    sCircle:
+        name: Team S
+
+Sch\WlBundle\Entity\User:
+    admin1:
+        username: boris
+        surname: Boris
+        email: b@localhost.com
+        circles: [@bCircle, @sCircle]
+        enabled: 1
+    admin2:
+        username: helene
+        surname: Helene
+        email: h@localhost.com
+        circles: [@bCircle, @sCircle]
+        enabled: 1
+    user1:
+        username: annie
+        surname: Annie
+        email: a@localhost.com
+        circles: [@bCircle]
+        enabled: 1
+    user2:
+        username: francis
+        surname: Francis
+        email: a@localhost.com
+        circles: [@bCircle]
+        enabled: 1
+    user3:
+        username: carole
+        surname: Carole
+        email: c@localhost.com
+        circles: [@sCircle]
+        enabled: 1
+    user4:
+        username: philippe
+        surname: Philippe
+        email: p@localhost.com
+        circles: [@sCircle]
+        enabled: 0

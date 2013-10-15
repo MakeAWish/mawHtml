@@ -17,13 +17,11 @@ class User extends BaseUser
      * @ORM\OneToMany(targetEntity="Wish", mappedBy="user")
      */
     protected $wishes;
-
     /**
      * @ORM\ManyToMany(targetEntity="Circle", inversedBy="users")
      * @ORM\JoinTable(name="users_circles")
      **/
     protected $circles;
-
     /**
      * @var integer
      *
@@ -32,6 +30,20 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="surname", type="text", nullable=true)
+     */
+    protected $surname;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        //TODO : to remove
+        $this->setPlainPassword('pass');
+    }
 
     /**
      * Add circles
@@ -99,12 +111,6 @@ class User extends BaseUser
         return $this->wishes;
     }
 
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
-
     /**
      * Get id
      *
@@ -113,5 +119,28 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get surname
+     *
+     * @return string
+     */
+    public function getSurname()
+    {
+        return $this->surname ? $this->surname : $this->username;
+    }
+
+    /**
+     * Get surname
+     *
+     * @param $username
+     * @return User
+     */
+    public function setSurname($surname)
+    {
+        $this->surname = $surname;
+
+        return $this;
     }
 }
