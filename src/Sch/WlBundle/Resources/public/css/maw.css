@@ -118,7 +118,7 @@ h2 {
     background-color: #06a0a8;
 }
 
-.cuisine, .enfant, .sport, .voyage, .jeux, .multimedia, .culture, .mode, .bricolage, .maison, .event {
+.cuisine, .enfants, .sport, .voyages, .jeux, .multimedia, .culture, .mode, .bricolage, .maison, .event {
     border-radius: 5px;
     padding: 8px 12px;
     margin-bottom: 20px;
@@ -177,11 +177,11 @@ h2 {
     background: url(../img/mode.png);
 }
 
-.voyage {
+.voyages {
     background-color: #006bbe;
 }
 
-.ivoyage {
+.ivoyages {
     background: url(../img/voyage.png);
 }
 
@@ -201,11 +201,11 @@ h2 {
     background: url(../img/sport.png) no-repeat;
 }
 
-.enfant {
+.enfants {
     background-color: #681cb4;
 }
 
-.ienfant {
+.ienfants {
     background: url(../img/enfant.png);
 }
 
