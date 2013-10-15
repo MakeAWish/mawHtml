@@ -1,10 +1,13 @@
 <div class="{{ wish.category.slug }}">
-    <h2>{{ wish.title }}</h2>
+    <h2 class="col-lg-10">{{ wish.title }}</h2>
 
-    <div class="icone i{{ wish.category.slug }}"></div>
+    <div class="col-lg-2 icone i{{ wish.category.slug }}"></div>
     <p>{{ wish.description }}</p>
 
-    <p>{#<a class="btn btn-small btn-info" href="#">Lien »</a>#}
-        <a class="btn btn-small btn-warning" href="{{ path('sch_wl_wish_edit', { 'id': wish.id }) }}">Modifier</a>
-        <a class="btn btn-small btn-danger" href="{{ path('sch_wl_wish_delete', { 'id': wish.id }) }}">Supprimer</a></p>
+    <p>
+        <a class="btn btn-lg btn-warning" href="{{ path('sch_wl_wish_edit', { 'id': wish.id }) }}"><span
+                    class="glyphicon glyphicon-edit"></span> Modifier</a>
+        <a class="btn btn-lg btn-danger" href="{{ path('sch_wl_wish_delete', { 'id': wish.id }) }}"><span
+                    class="glyphicon glyphicon-remove"></span> Supprimer</a>
+    </p>
 </div>
