@@ -37,12 +37,15 @@ class User extends BaseUser
      */
     protected $surname;
 
-    public function __construct()
+    /**
+     * @param string $pass
+     */
+    public function __construct($pass = 'pass')
     {
         parent::__construct();
 
         //TODO : to remove
-        $this->setPlainPassword('pass');
+        $this->setPlainPassword($pass);
     }
 
     /**

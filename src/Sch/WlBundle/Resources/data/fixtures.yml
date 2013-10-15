@@ -38,12 +38,14 @@ Sch\WlBundle\Entity\Circle:
 
 Sch\WlBundle\Entity\User:
     admin1:
+        __construct: ['boris']
         username: boris
         surname: Boris
         email: b@localhost.com
         circles: [@bCircle, @sCircle]
         enabled: 1
     admin2:
+        __construct: ['helene']
         username: helene
         surname: Helene
         email: h@localhost.com
@@ -58,7 +60,7 @@ Sch\WlBundle\Entity\User:
     user2:
         username: francis
         surname: Francis
-        email: a@localhost.com
+        email: f@localhost.com
         circles: [@bCircle]
         enabled: 1
     user3:
@@ -73,3 +75,25 @@ Sch\WlBundle\Entity\User:
         email: p@localhost.com
         circles: [@sCircle]
         enabled: 0
+
+Sch\WlBundle\Entity\Wish:
+    wish{0..9}admin1:
+        user: @admin1
+        category: @cat<current()>
+        title: admin1 <sentence(6)>
+        description: <paragraph(2)>
+    wish2admin1:
+        user: @admin1
+        category: @cat5
+        title: admin1 <sentence(6)>
+        description: <paragraph(2)>
+    wishadmin2:
+        user: @admin2
+        category: @cat6
+        title: admin2 <sentence(6)>
+        description: <paragraph(2)>
+    wishuser{1..4}:
+        user: @user<current()>
+        category: @cat<current()>
+        title: user<current()> <sentence(6)>
+        description: <paragraph(2)>
