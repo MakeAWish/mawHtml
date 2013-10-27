@@ -13,7 +13,6 @@ class WishType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('user')
             ->add('category')
         ;
     }

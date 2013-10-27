@@ -3,6 +3,8 @@
 {% block nav_wish_class %}active{% endblock %}
 
 {% block content %}
+    {% include "SchWlBundle:Wish:flashMessages.html.twig" %}
+
     <div class="jumbotron">
         <!-- <h2>Ma Wishlist</h2> -->
         <p class="lead">Voici votre wishlist, n'hésitez pas à la mettre à jour au gré de vos envies !!!</p>
@@ -15,6 +17,7 @@
             <div class="col-lg-6">
                 {% for wish in entities %}
                     {% if loop.index0%2 == false %}
+                        {% set delete_form = delete_forms[loop.index0] %}
                         {% include "SchWlBundle:Wish:onewish.html.twig" %}
                     {% endif %}
                 {% endfor %}
@@ -22,6 +25,7 @@
             <div class="col-lg-6">
                 {% for wish in entities %}
                     {% if loop.index0%2 %}
+                        {% set delete_form = delete_forms[loop.index0] %}
                         {% include "SchWlBundle:Wish:onewish.html.twig" %}
                     {% endif %}
                 {% endfor %}

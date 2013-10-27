@@ -8,12 +8,11 @@
 
 {% block content %}
 
-    <div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        {{ form_errors(form) }}
-    </div>
+    {{ form_errors(form) }}
 
     <form action="{{ path('sch_wl_wish_create') }}" method="post" {{ form_enctype(form) }}>
+
+
         <div class="form-group">
             {{ form_label(form.title, 'Titre', { 'attr': {'class': 'form-control'} }) }}
             {{ form_widget(form.title, { 'attr': {'class': 'form-control'} }) }}
@@ -26,14 +25,11 @@
             {{ form_widget(form.category, { 'attr': {'class': 'form-control'} }) }}
         </div>
         {{ form_rest(form) }}
-        <button class="btn btn-default btn-success btn-block" type="submit">Ajouter</button>
+        <button class="btn btn-success btn-lg pull-right" type="submit">
+            <span class="glyphicon glyphicon-add"></span> Ajouter
+        </button>
+        <a href="{{ path('sch_wl_wish_index') }}" class="btn btn-primary btn-lg">
+            <span class="glyphicon glyphicon-th-list"></span> Retour
+        </a>
     </form>
-
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('sch_wl_wish_index') }}">
-                Back to the list
-            </a>
-        </li>
-    </ul>
 {% endblock %}

@@ -30,11 +30,15 @@ class WishController extends Controller
         $em = $this->getDoctrine()->getManager();
         $usr = $this->get('security.context')->getToken()->getUser();
 
-
         $entities = $em->getRepository('SchWlBundle:Wish')->findAllForUser($usr);
+
+        $deleteForms = array_map(function($wish){
+            return $this->createDeleteForm($wish->getId())->createView();
+        }, $entities);
 
         return array(
             'entities' => $entities,
+            'delete_forms' => $deleteForms
         );
     }
 
@@ -60,7 +64,12 @@ class WishController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('sch_wl_wish_show', array('id' => $entity->getId())));
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                'Félicitations ! Votre voeu a été ajouté.'
+            );
+
+            return $this->redirect($this->generateUrl('sch_wl_wish_index'));
         }
 
         return array(
@@ -147,7 +156,7 @@ class WishController extends Controller
     /**
      * Edits an existing Wish entity.
      *
-     * @Route("/{id}")
+     * @Route("/{id}/edit")
      * @Method("PUT")
      * @Template("SchWlBundle:Wish:edit.html.twig")
      */
@@ -169,12 +178,17 @@ class WishController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('sch_wl_wish_edit', array('id' => $id)));
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                'Voeu modifié.'
+            );
+
+            return $this->redirect($this->generateUrl('sch_wl_wish_index'));
         }
 
         return array(
             'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -200,6 +214,11 @@ class WishController extends Controller
 
             $em->remove($entity);
             $em->flush();
+
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                'Ce voeu a été supprimé.'
+            );
         }
 
         return $this->redirect($this->generateUrl('sch_wl_wish_index'));
