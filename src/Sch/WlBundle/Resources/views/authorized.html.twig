@@ -25,7 +25,8 @@
                                 href="{{ path('sch_wl_wish_index') }}">Wihlist</a></li>
                     <li class="{% block nav_gift_class %}{% endblock %}"><a href="#">Giftlist</a></li>
                     <li class="{% block nav_event_class %}{% endblock %}"><a href="#">Evénements</a></li>
-                    <li class="{% block nav_profile_class %}{% endblock %}"><a href="#">Profil</a></li>
+                    <li class="{% block nav_profile_class %}{% endblock %}"><a
+                                href="{{ path('fos_user_profile_show') }}">Profil</a></li>
                 </ul>
                 {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <ul class="nav navbar-nav navbar-right">
@@ -51,6 +52,7 @@
         </div>
     </div>
     {% block content %}{% endblock %}
+    {% block fos_user_content %}{% endblock %}
     <div class="footer">
         <p>&copy; SchapSchap Team 2013</p>
     </div>
