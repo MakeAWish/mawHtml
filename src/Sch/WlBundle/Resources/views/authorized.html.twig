@@ -17,16 +17,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Hello, {{ app.user.surname }}</a>
+                <a class="navbar-brand" href="{{ path('fos_user_profile_show') }}">Hello, {{ app.user.surname }}</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="{% block nav_wish_class %}{% endblock %}"><a
-                                href="{{ path('sch_wl_wish_index') }}">Wihlist</a></li>
-                    <li class="{% block nav_gift_class %}{% endblock %}"><a href="#">Giftlist</a></li>
-                    <li class="{% block nav_event_class %}{% endblock %}"><a href="#">Evénements</a></li>
-                    <li class="{% block nav_profile_class %}{% endblock %}"><a
-                                href="{{ path('fos_user_profile_show') }}">Profil</a></li>
+                                href="{{ path('sch_wl_wish_index') }}">Vos envies</a></li>
+                    <li class="{% block nav_event_class %}{% endblock %}"><a href="#">Vos Evénements</a></li>
+                    <li class="{% block nav_gift_class %}{% endblock %}"><a href="#">Résumé de vos achats</a></li></li>
                 </ul>
                 {% if is_granted('ROLE_SUPER_ADMIN') %}
                     <ul class="nav navbar-nav navbar-right">
