@@ -5,68 +5,215 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>MakeAWish2</title>
+        <title>Make A Wish</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="/favicon.ico">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="./favicon.ico">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
         <!-- endbower -->
         <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
+        <!-- build:css(.tmp) ./styles/main.css -->
+        <!--suppress HtmlUnknownTarget -->
+        <link rel="stylesheet" href="./styles/main.css">
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
 
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
     </head>
     <body>
         <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browsehappy">Vous utilisez un navigateur <strong>dépassés</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a> pour améliorer votre expérience.</p>
         <![endif]-->
 
 
-        <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+        <div class="navbar navbar-maw" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Make A Wish</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Voeux</a></li>
+                    <li><a href="#">Offrir</a></li>
+                    <li><a href="#">Evénements</a></li>
                 </ul>
-                <h3 class="text-muted">MakeAWish2</h3>
-            </div>
+                <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <!-- Notifications: style can be found in dropdown.less -->
+                    <li class="dropdown notifications-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="glyphicon glyphicon-exclamation-sign"></i>
+                            <span class="label label-warning">10</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">Vous avez 5 notifications&nbsp:</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#">
+                                            <i class="glyphicon glyphicon-user info"></i> Votre profil est rempli à 90%
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="glyphicon glyphicon-warning-sign danger"></i> Ne ratez pas l'anniversaire de Thimothée
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="glyphicon glyphicon-transfer warning"></i> 5 nouveaux membres
+                                        </a>
+                                    </li>
 
-            <div class="jumbotron">
-                <h1>'Allo, 'Allo!</h1>
-                <p class="lead">Always a pleasure scaffolding your apps.</p>
-                <p><a class="btn btn-lg btn-success" href="#">Splendid! <span class="glyphicon glyphicon-ok"></span></a></p>
-            </div>
-
-            <div class="row marketing">
-                <div class="col-lg-6">
-                    <h4>HTML5 Boilerplate</h4>
-                    <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-
-                    <h4>Sass with Compass</h4>
-                    <p>Compass is an open-source CSS Authoring Framework that uses Sass.</p>
-
-
-                    <h4>Bootstrap</h4>
-                    <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-
-                    <h4>Modernizr</h4>
-                    <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-
+                                    <li>
+                                        <a href="#">
+                                            <i class="glyphicon glyphicon-thumbs-up success"></i> 11 cadeaux offerts, super !
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="glyphicon glyphicon-pencil danger"></i> Votre modification de profil a bien été prise en compte
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">View all</a></li>
+                        </ul>
+                    </li>
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span>Marie-Emmanuelle <i class="caret"></i></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-user"></span> Profil</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
                 </div>
-            </div>
+            </div><!--/.nav-collapse -->
+        </div><!-- /.navbar -->
 
-            <div class="footer">
-                <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-            </div>
+        <div class="container">
+            <section class="content-header">
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="glyphicon glyphicon-gift"></i> Voeux</a></li>
+                    <li class="active">Liste</li>
+                </ol>
+            </section>
+            <section class="content">
 
-        </div>
+            <!-- Small boxes (Wish boxes) -->
+            <div class="row">
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>
+                                Voyage à Bali
+                            </h3>
+                            <p>
+                                Histoire de découvrir les meiveilles des plages de sable fin
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="glyphicon glyphicon-plane"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info <i class="glyphicon glyphicon-arrow-right"></i>
+                        </a>
+                    </div>
+                </div><!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3>
+                                Hunger Games
+                            </h3>
+                            <p>
+                                Un arcs, des flèches, des écureils et des glands
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="glyphicon glyphicon-film"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info <i class="glyphicon glyphicon-arrow-right"></i>
+                        </a>
+                    </div>
+                </div><!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3>
+                                Piña Colada
+                            </h3>
+                            <p>
+                                Parce que la vie est plus douce avec une pointe de Rhum
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="glyphicon glyphicon-glass"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info <i class="glyphicon glyphicon-arrow-right"></i>
+                        </a>
+                    </div>
+                </div><!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-red">
+                        <div class="inner">
+                            <h3>
+                                Dafte Pounk
+                            </h3>
+                            <p>
+                                Harder, better, faster, stronger
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="glyphicon glyphicon-music"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info <i class="glyphicon glyphicon-arrow-right"></i>
+                        </a>
+                    </div>
+                </div><!-- ./col -->
+            </div><!-- /.row -->
+
+            </section>
+        </div><!-- /.container -->
+
 
 
         <!-- build:js scripts/vendor.js -->
