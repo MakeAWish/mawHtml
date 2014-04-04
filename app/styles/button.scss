@@ -1,0 +1,123 @@
+/*
+    Component: Buttons
+-------------------------
+*/
+.btn {
+  font-weight: 500;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  -webkit-box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.09);
+  box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, 0.09);
+
+  &.btn-default {
+    background-color: #fafafa;
+    color: #666;
+    border-color: #ddd;
+
+    &:hover,
+    &:active,
+    &.hover {
+      background-color: #f4f4f4 !important;
+    }
+
+    &.btn-flat {
+      border-bottom-color: #d9dadc;
+    }
+  }
+
+  &.btn-primary {
+    background-color: #3c8dbc;
+    border-color: #367fa9;
+
+    &:hover,
+    &:active,
+    &.hover {
+      background-color: #367fa9;
+    }
+  }
+
+  &.btn-success {
+    background-color: #00a65a;
+    border-color: #008d4c;
+
+    &:hover,
+    &:active,
+    &.hover {
+      background-color: #008d4c;
+    }
+  }
+
+  &.btn-info {
+    background-color: #00c0ef;
+    border-color: #00acd6;
+
+    &:hover,
+    &:active,
+    &.hover {
+      background-color: #00acd6;
+    }
+  }
+
+  &.btn-danger {
+    background-color: #f56954;
+    border-color: #f4543c;
+
+    &:hover,
+    &:active,
+    &.hover {
+      background-color: #f4543c;
+    }
+  }
+
+  &.btn-warning {
+    background-color: #f39c12;
+    border-color: #e08e0b;
+
+    &:hover,
+    &:active,
+    &.hover {
+      background-color: #e08e0b;
+    }
+  }
+
+  &.btn-sm {
+    font-size: 12px;
+  }
+
+  &.btn-lg {
+    padding: 10px 16px;
+  }
+
+  &.btn-block {
+    font-size: 15px;
+    padding: 10px;
+
+    &.btn-sm {
+      font-size: 13px;
+      padding: 7px;
+    }
+  }
+
+  &.btn-flat {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-width: 1px;
+  }
+
+  &:active {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
