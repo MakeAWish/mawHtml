@@ -569,289 +569,87 @@ a {
   background-color: #ffffff;
 }
 
-.box.box-solid {
-  border-top: 0px;
-}
-
-.box.box-solid > .box-header {
-  padding-bottom: 0px !important;
-}
-
-.box.box-solid > .box-header .btn.btn-default {
-  background: transparent;
-}
-
-.box.box-solid.box-primary > .box-header {
-  color: #fff;
-  background: #3c8dbc;
-  background-color: #3c8dbc;
-}
-
-.box.box-solid.box-primary > .box-header a {
-  color: #444;
-}
-
-.box.box-solid.box-info > .box-header {
-  color: #fff;
-  background: #00c0ef;
-  background-color: #00c0ef;
-}
-
-.box.box-solid.box-info > .box-header a {
-  color: #444;
-}
-
-.box.box-solid.box-danger > .box-header {
-  color: #fff;
-  background: #f56954;
-  background-color: #f56954;
-}
-
-.box.box-solid.box-danger > .box-header a {
-  color: #444;
-}
-
-.box.box-solid.box-warning > .box-header {
-  color: #fff;
-  background: #f39c12;
-  background-color: #f39c12;
-}
-
-.box.box-solid.box-warning > .box-header a {
-  color: #444;
-}
-
-.box.box-solid.box-success > .box-header {
-  color: #fff;
-  background: #00a65a;
-  background-color: #00a65a;
-}
-
-.box.box-solid.box-success > .box-header a {
-  color: #444;
-}
-
-.box.box-solid > .box-header > .box-tools > .btn {
-  border: 0;
-  box-shadow: none;
-}
-
-.box.box-solid.collapsed-box .box-header {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-.box.box-solid[class*='bg'] > .box-header {
-  color: #fff;
-}
-
-.box .box-group > .box {
-  margin-bottom: 5px;
-}
-
-.box .knob-label {
-  text-align: center;
-  color: #333;
-  font-weight: 100;
-  font-size: 12px;
-  margin-bottom: 0.3em;
-}
-
-.box .todo-list {
-  margin: 0;
-  padding: 0px 0px;
-  list-style: none;
-}
-
-.box .todo-list > li {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  padding: 10px;
-  background: #f3f4f5;
-  margin-bottom: 2px;
-  border-left: 2px solid #e6e7e8;
-  color: #444;
-}
-
-.box .todo-list > li:last-of-type {
-  margin-bottom: 0;
-}
-
-.box .todo-list > li.danger {
-  border-left-color: #f56954;
-}
-
-.box .todo-list > li.warning {
-  border-left-color: #f39c12;
-}
-
-.box .todo-list > li.info {
-  border-left-color: #00c0ef;
-}
-
-.box .todo-list > li.success {
-  border-left-color: #00a65a;
-}
-
-.box .todo-list > li.primary {
-  border-left-color: #3c8dbc;
-}
-
-.box .todo-list > li > input[type='checkbox'] {
-  margin: 0 10px 0 5px;
-}
-
-.box .todo-list > li .text {
-  display: inline-block;
-  margin-left: 5px;
-  font-weight: 600;
-}
-
-.box .todo-list > li .label {
-  margin-left: 10px;
-  font-size: 9px;
-}
-
-.box .todo-list > li .tools {
-  display: none;
-  float: right;
-  color: #f56954;
-}
-
-.box .todo-list > li .tools > .fa,
-.box .todo-list > li .tools > .glyphicon,
-.box .todo-list > li .tools > .ion {
-  margin-right: 5px;
-  cursor: pointer;
-}
-
-.box .todo-list > li:hover .tools {
-  display: inline-block;
-}
-
-.box .todo-list > li.done {
-  color: #999;
-}
-
-.box .todo-list > li.done .text {
-  text-decoration: line-through;
-  font-weight: 500;
-}
-
-.box .todo-list > li.done .label {
-  background: #eaeaec !important;
-}
-
-.box .todo-list .handle {
-  display: inline-block;
-  cursor: move;
-  margin: 0 5px;
-}
-
 .box .chat {
   padding: 5px 20px 5px 10px;
+
+  .item {
+    margin-bottom: 10px;
+
+    &:before,
+    &:after {
+      display: table;
+      content: " ";
+    }
+
+    &:after {
+      clear: both;
+    }
+
+    > img {
+      width: 40px;
+      height: 40px;
+      border: 2px solid transparent;
+      -webkit-border-radius: 50% !important;
+      -moz-border-radius: 50% !important;
+      border-radius: 50% !important;
+      background-color: $gray;
+
+      &.online {
+        border: 2px solid #00a65a;
+      }
+
+      &.offline {
+        border: 2px solid #f56954;
+      }
+    }
+
+    > .message {
+      margin-left: 55px;
+      margin-top: -40px;
+
+      > .name {
+        display: block;
+        font-weight: 600;
+      }
+    }
+
+    > .attachment {
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      background: #f0f0f0;
+      margin-left: 65px;
+      margin-right: 15px;
+      padding: 10px;
+
+      > h4 {
+        margin: 0 0 5px 0;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      > p,
+      > .filename {
+        font-weight: 600;
+        font-size: 13px;
+        font-style: italic;
+        margin: 0;
+      }
+
+      &:before,
+      &:after {
+        display: table;
+        content: " ";
+      }
+
+      &:after {
+        clear: both;
+      }
+    }
+  }
 }
 
-.box .chat .item {
-  margin-bottom: 10px;
-}
-
-.box .chat .item:before,
-.box .chat .item:after {
-  display: table;
-  content: " ";
-}
-
-.box .chat .item:after {
-  clear: both;
-}
-
-.box .chat .item > img {
-  width: 40px;
-  height: 40px;
-  border: 2px solid transparent;
-  -webkit-border-radius: 50% !important;
-  -moz-border-radius: 50% !important;
-  border-radius: 50% !important;
-  background-color: $gray;
-}
-
-.box .chat .item > img.online {
-  border: 2px solid #00a65a;
-}
-
-.box .chat .item > img.offline {
-  border: 2px solid #f56954;
-}
-
-.box .chat .item > .message {
-  margin-left: 55px;
-  margin-top: -40px;
-}
-
-.box .chat .item > .message > .name {
-  display: block;
-  font-weight: 600;
-}
-
-.box .chat .item > .attachment {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background: #f0f0f0;
-  margin-left: 65px;
-  margin-right: 15px;
-  padding: 10px;
-}
-
-.box .chat .item > .attachment > h4 {
-  margin: 0 0 5px 0;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.box .chat .item > .attachment > p,
-.box .chat .item > .attachment > .filename {
-  font-weight: 600;
-  font-size: 13px;
-  font-style: italic;
-  margin: 0;
-}
-
-.box .chat .item > .attachment:before,
-.box .chat .item > .attachment:after {
-  display: table;
-  content: " ";
-}
-
-.box .chat .item > .attachment:after {
-  clear: both;
-}
-
-.box > .overlay,
-.box > .loading-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.box > .overlay {
-  z-index: 1010;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.box > .overlay.dark {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.box > .loading-img {
-  z-index: 1020;
-  background: transparent url('../img/ajax-loader1.gif') 50% 50% no-repeat;
-}
+/* Navbar dropdowns */
 
 .navbar-nav > .notifications-menu > .dropdown-menu > li.header,
 .navbar-nav > .messages-menu > .dropdown-menu > li.header,
