@@ -144,23 +144,23 @@
     <section class="content">
 
         <div class="row">
-            <section class="col-md-6 col-xs-12">
+            <section class="col-md-6 col-md-offset-3 col-xs-12">
 
                 <!-- Form box -->
                 <div class="box box-info">
                     <div class="box-header">
-                        <h3 class="box-title">Mon souhait</h3>
+                        <h3 class="box-title">Nouveau souhait</h3>
                     </div>
                     <div class="box-body">
                         <form role="form">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="title">Titre</label>
-                                    <input type="text" class="form-control" id="title" value="Etre heureux comme un rat des champs">
+                                    <input type="text" class="form-control" id="title" placeholder="Ce que j'aimerais bien">
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea class="form-control" id="description" value="Courir tout nu dans les champs de blé"></textarea>
+                                    <textarea class="form-control" id="description" placeholder="Plus d'informations sur ce souhait"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="category">Catégorie</label>
@@ -175,96 +175,12 @@
                             </div><!-- /.box-body -->
 
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">Modifier</button>
-                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                                <button type="submit" class="btn btn-primary">Valider</button>
                             </div>
                         </form>
                     </div>
                     <!-- /.box-body -->
                 </div>
-            </section>
-            <section class="col-md-6 col-xs-12">
-                <!-- Chat box -->
-                <div class="box box-success">
-                    <div class="box-header">
-                        <h3 class="box-title"><i class="glyphicon glyphicon-comment"></i> Discussion</h3>
-
-                        <div class="box-tools pull-right" data-toggle="tooltip" title="" data-original-title="Status">
-                            <div class="btn-group" data-toggle="btn-toggle">
-                                <button type="button" class="btn btn-default btn-sm active"><i
-                                        class="glyphicon glyphicon-stop text-green"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i
-                                        class="glyphicon glyphicon-stop text-red"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slimScrollDiv">
-                        <div class="box-body chat" id="chat-box">
-                            <!-- chat item -->
-                            <div class="item">
-                                <img src="./images/avatars/assassin_avatar.png" alt="user image" class="online">
-
-                                <p class="message">
-                                    <a href="#" class="name">
-                                        <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>
-                                            2:15
-                                        </small>
-                                        Ezio Auditore Da Firente
-                                    </a>
-                                    Moi j'aurais bien buté un ou deux romains, quand même, pour l'exemple. Non mais
-                                    c'est quoi cette société policée où on ne peut plus sortir sa lame et faire une
-                                    carnage sans que ça ne provoque une émeute ?!
-                                </p>
-                                <!-- /.attachment -->
-                            </div>
-                            <!-- /.item -->
-                            <!-- chat item -->
-                            <div class="item">
-                                <img src="./images/avatars/mom_avatar.png" alt="user image" class="offline">
-
-                                <p class="message">
-                                    <a href="#" class="name">
-                                        <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>
-                                            5:15
-                                        </small>
-                                        Mum
-                                    </a>
-                                    Coucou mes chéris, c'est pour vous dire que ce soir, c'est à 19h. N'en parler pas
-                                    aux autres, c'est une surprise. Quand même, je ne sais pas si c'est au bon endroit
-                                    que j'écris pour envoyer un mail. Si je clique sur "Envoyer", c'est bon ?
-                                </p>
-                            </div>
-                            <!-- /.item -->
-                            <!-- chat item -->
-                            <div class="item">
-                                <img src="./images/avatars/nurse_avatar.png" alt="user image" class="offline">
-
-                                <p class="message">
-                                    <a href="#" class="name">
-                                        <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>
-                                            5:30
-                                        </small>
-                                        Mamaine
-                                    </a>
-                                    Non mais celui-là, quelle grosse tarlouze ! Je vais devoir lui palper les coroñes
-                                    pour vérifier qu'elles sont bien là.
-                                </p>
-                            </div>
-                            <!-- /.item -->
-                        </div>
-                    </div>
-                    <!-- /.chat -->
-                    <div class="box-footer">
-                        <div class="input-group">
-                            <input class="form-control" placeholder="Type message...">
-
-                            <div class="input-group-btn">
-                                <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.box (chat box) -->
             </section>
         </div>
         <!-- /.row of large boxes -->
