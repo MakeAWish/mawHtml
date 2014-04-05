@@ -18,19 +18,19 @@
   }
 
   &.box-info {
-    border-top-color: #00c0ef;
+    border-top-color: $info;
   }
 
   &.box-danger {
-    border-top-color: #f56954;
+    border-top-color: $danger;
   }
 
   &.box-warning {
-    border-top-color: #f39c12;
+    border-top-color: $warning;
   }
 
   &.box-success {
-    border-top-color: #00a65a;
+    border-top-color: $success;
   }
 
   .box-header {
@@ -146,11 +146,11 @@
         background-color: $gray;
 
         &.online {
-          border: 2px solid #00a65a;
+          border: 2px solid $online;
         }
 
         &.offline {
-          border: 2px solid #f56954;
+          border: 2px solid $offline;
         }
       }
 

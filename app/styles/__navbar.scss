@@ -1,23 +1,152 @@
-/* Navbar dropdowns */
+/* Navbar */
 
-.navbar-nav > .notifications-menu > .dropdown-menu > li.header {
-  -webkit-border-top-left-radius: 4px;
-  -webkit-border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 0;
-  -moz-border-radius-topleft: 4px;
-  -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 0;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  background-color: #ffffff;
-  padding: 7px 10px;
-  border-bottom: 1px solid #f4f4f4;
-  color: #444444;
-  font-size: 14px;
+.navbar {
+  background-color: $almost-white;
+  border-bottom: 1px solid #eee;
+
+  .nav > li > a {
+    font-weight: 700;
+    color: $black;
+    &:hover, &:focus {
+      color: $dark-gray;
+      background-color: $white;
+    }
+  }
+
+  .navbar-brand {
+    float: left;
+    font-size: 35px;
+    line-height: 50px;
+    text-align: center;
+    padding: 0 10px;
+    width: 220px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 500;
+    height: 50px;
+    display: block;
+    background-color: $blue;
+    color: $light-gray;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .nav > li > a > .label {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    right: 2px;
+    font-size: 10px;
+    font-weight: normal;
+    width: 15px;
+    height: 15px;
+    line-height: 1.0em;
+    text-align: center;
+    padding: 2px;
+  }
+
+  .navbar-header .navbar-toggle {
+    border-color: $black;
+
+    .icon-bar {
+      background-color: $black;
+    }
+  }
+
+  .navbar-txt {
+    font-weight: 700;
+    color: $black;
+    padding: 15px 15px;
+    line-height: 20px;
+    display: inline-block;
+  }
+
+  /* Navbar dropdowns */
+
+  .navbar-nav > .notifications-menu > .dropdown-menu > li {
+
+    &.header {
+      -webkit-border-top-left-radius: 4px;
+      -webkit-border-top-right-radius: 4px;
+      -webkit-border-bottom-right-radius: 0;
+      -webkit-border-bottom-left-radius: 0;
+      -moz-border-radius-topleft: 4px;
+      -moz-border-radius-topright: 4px;
+      -moz-border-radius-bottomright: 0;
+      -moz-border-radius-bottomleft: 0;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      background-color: #ffffff;
+      padding: 7px 10px;
+      border-bottom: 1px solid #f4f4f4;
+      color: #444444;
+      font-size: 14px;
+    }
+
+    .menu {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow-x: hidden;
+
+      > li {
+        > a {
+          display: block;
+          white-space: nowrap;
+          font-size: 12px;
+          color: #444444;
+          /* Prevent text from breaking */
+
+          border-bottom: 1px solid #f4f4f4;
+
+          &:hover {
+            background: #f6f6f6;
+            text-decoration: none;
+          }
+
+          > .glyphicon,
+          > .glyphicon.info {
+            font-size: 20px;
+            width: 50px;
+            text-align: center;
+            padding: 15px 0px;
+            margin-right: 5px;
+            /* Default background and font colors */
+
+            background: $info;
+            color: #f9f9f9;
+            /* Fallback for browsers that doesn't support rgba */
+
+            color: rgba(255, 255, 255, 0.7);
+
+            &.danger {
+              background: $danger;
+            }
+
+            &.warning {
+              background: $warning;
+            }
+
+            &.success {
+              background: $success;
+            }
+
+            &.info {
+              background: $info;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Add fade animation to dropdown menus */
@@ -78,81 +207,13 @@
 
 /* Fix menu positions on xs screens to appear correctly and fully */
 @media screen and (max-width: 480px) {
-  .navbar-nav > .notifications-menu > .dropdown-menu > li.header {
-    /* Remove arrow from the top */
-  }
-  .navbar-nav > .notifications-menu > .dropdown-menu > li.header:after {
-    border-width: 0px !important;
-  }
   .navbar-nav > .notifications-menu > .dropdown-menu {
     position: absolute;
     right: -170px;
     left: auto;
+
+    > li.header:after {
+      border-width: 0px !important;
+    }
   }
-}
-
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow-x: hidden;
-}
-
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
-  display: block;
-  white-space: nowrap;
-  /* Prevent text from breaking */
-
-  border-bottom: 1px solid #f4f4f4;
-}
-
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a:hover {
-  background: #f6f6f6;
-  text-decoration: none;
-}
-
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
-  font-size: 12px;
-  color: #444444;
-}
-
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon,
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa,
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion {
-  font-size: 20px;
-  width: 50px;
-  text-align: center;
-  padding: 15px 0px;
-  margin-right: 5px;
-  /* Default background and font colors */
-
-  background: #00c0ef;
-  color: #f9f9f9;
-  /* Fallback for browsers that doesn't support rgba */
-
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon.danger,
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa.danger,
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion.danger {
-  background: #f56954;
-}
-
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon.warning,
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa.warning,
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion.warning {
-  background: #f39c12;
-}
-
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon.success,
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa.success,
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion.success {
-  background: #00a65a;
-}
-
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon.info,
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa.info,
-.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion.info {
-  background: #00c0ef;
 }

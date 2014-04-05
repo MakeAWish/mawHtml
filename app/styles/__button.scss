@@ -40,7 +40,7 @@
   }
 
   &.btn-success {
-    background-color: #00a65a;
+    background-color: $success;
     border-color: #008d4c;
 
     &:hover,
@@ -51,7 +51,7 @@
   }
 
   &.btn-info {
-    background-color: #00c0ef;
+    background-color: $info;
     border-color: #00acd6;
 
     &:hover,
@@ -62,7 +62,7 @@
   }
 
   &.btn-danger {
-    background-color: #f56954;
+    background-color: $danger;
     border-color: #f4543c;
 
     &:hover,
@@ -73,7 +73,7 @@
   }
 
   &.btn-warning {
-    background-color: #f39c12;
+    background-color: $warning;
     border-color: #e08e0b;
 
     &:hover,
