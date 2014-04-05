@@ -18,8 +18,16 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) ./styles/main.css -->
+
         <!--suppress HtmlUnknownTarget -->
         <link rel="stylesheet" href="./styles/main.css">
+
+        <!--suppress HtmlUnknownTarget -->
+        <link rel="stylesheet" href="./styles/button.css">
+
+        <!--suppress HtmlUnknownTarget -->
+        <link rel="stylesheet" href="./styles/small-boxes.css">
+
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -35,9 +43,9 @@
     </head>
     <body>
         <!--[if lt IE 10]>
-            <p class="browsehappy">Vous utilisez un navigateur <strong>dépassés</strong>. Merci de <a href="http://browsehappy.com/">mettre à jour votre navigateur</a> pour améliorer votre expérience.</p>
+        <p class="browsehappy">Vous utilisez un navigateur <strong>dépassés</strong>. Merci de <a
+                href="http://browsehappy.com/">mettre à jour votre navigateur</a> pour améliorer votre expérience.</p>
         <![endif]-->
-
 
         <div class="navbar navbar-maw" role="navigation">
             <div class="navbar-header">
@@ -50,69 +58,67 @@
                 <a class="navbar-brand" href="#">Make A Wish</a>
             </div>
 
-            
 
             <div class="collapse navbar-collapse">
-                
+
                 <span class="navbar-txt">Ici se réalisent tous vos rêves...</span>
-                
+
                 <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                    
-                    <!-- User Account: style can be found in dropdown.less -->
-                    <li class="dropdown user user-menu">
-                        
-                                <a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a>
-                            </li>
-                            
-                    </li>
-                </ul>
+                    <ul class="nav navbar-nav">
+
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+
+                            <a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a>
+                        </li>
+
+                        </li>
+                    </ul>
                 </div>
-            </div><!--/.nav-collapse -->
-        </div><!-- /.navbar -->
-
-
-
-<!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Faites un voeu</h1>
-        <p>Créez votre liste de voeux, consultez les listes de vos proches et organisez des événements en un clic !</p>
-        <p><a class="btn btn-success btn-lg" role="button">Créer un compte &raquo;</a></p>
-      </div>
-    </div>
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Wishlist</h2>
-          <p>Créez votre liste au gré de vos envies ! Ajoutez, modifiez et supprimez vos voeux comme vous le souhaitez. La seule limite est votre imagination, alors faites-vous plaisir !</p>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-        <div class="col-md-4">
-          <h2>Giflist</h2>
-          <p>Consultez les listes de voeux de vos proches pour savoir ce qui leur ferait envie : fini les cadeaux pourris et les faux sourires le matin de Noël ! Soyez sûr de taper dans le mille...</p>
-       </div>
-        <div class="col-md-4">
-          <h2>Events</h2>
-          <p>Organisez ou participez à des événements (anniversaires, Noël...) avec vos proches. Communiquez avec les autres membres de l'événement grâce au chat (miaou), pour coordinner des cadeaux communs ou échangez des détails sur un cadeau, à l'insu de l'intéressé(e).</p>
+        <!-- /.navbar -->
+
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Faites un voeu</h1>
+
+                <p>Créez votre liste de voeux, consultez les listes de vos proches et organisez des événements en un clic !</p>
+
+                <p><a class="btn btn-success btn-lg" role="button">Créer un compte &raquo;</a></p>
+            </div>
         </div>
-      </div>
 
-      <hr>
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Wishlist</h2>
 
-      
-    </div> <!-- /container -->
+                    <p>Créez votre liste au gré de vos envies ! Ajoutez, modifiez et supprimez vos voeux comme vous le souhaitez. La seule limite est votre imagination, alors faites-vous plaisir !</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Giflist</h2>
+
+                    <p>Consultez les listes de voeux de vos proches pour savoir ce qui leur ferait envie : fini les cadeaux pourris et les faux sourires le matin de Noël ! Soyez sûr de taper dans le mille...</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Events</h2>
+
+                    <p>Organisez ou participez à des événements (anniversaires, Noël...) avec vos proches. Communiquez avec les autres membres de l'événement grâce au chat (miaou), pour coordinner des cadeaux communs ou échangez des détails sur un cadeau, à l'insu de l'intéressé(e).</p>
+                </div>
+            </div>
+
+            <hr>
 
 
+        </div>
+        <!-- /container -->
 
 
-
-
-
-
-
-        
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -120,15 +126,6 @@
         <!-- endbower -->
         <!-- endbuild -->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
 
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
@@ -148,5 +145,5 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
-</body>
+    </body>
 </html>
