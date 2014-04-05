@@ -7,7 +7,7 @@ $black: #222222;
 $red: #f56954;
 $yellow: #f39c12;
 $aqua: #00c0ef;
-$blue: #0073b7;
+$blue: #428bca;
 $light-blue: #3c8dbc;
 $ultralight-blue: #72afd2;
 $green: #00a65a;
@@ -26,7 +26,7 @@ $light-gray: #f9f9f9;
 // bower:scss
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
-@import url(http://fonts.googleapis.com/css?family=Kaushan+Script&text=MakeAWish);
+@import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
 
 .browsehappy {
   margin: 0.2em 0;
@@ -41,6 +41,18 @@ html, body {
   background: $light-gray;
 }
 
+.jumbotron {
+  background: none;
+
+  h1 {
+    font-family: 'Kaushan Script', cursive; 
+  }
+
+  .account {
+    text-align: center;
+  }
+}
+
 a {
   color: $light-blue;
 }
@@ -51,6 +63,14 @@ a {
   button {
     margin-bottom: 20px;
   }
+}
+
+.navbar-txt {
+  font-weight: 700;
+    color: $black;
+    padding: 15px 15px;
+    line-height: 20px;
+    display: inline-block;
 }
 
 .navbar.navbar-maw {
@@ -68,7 +88,7 @@ a {
 
   .navbar-brand {
     float: left;
-    font-size: 20px;
+    font-size: 35px;
     line-height: 50px;
     text-align: center;
     padding: 0 10px;
@@ -77,7 +97,7 @@ a {
     font-weight: 500;
     height: 50px;
     display: block;
-    background-color: $black;
+    background-color: $blue;
     color: $light-gray;
 
     &:hover {
