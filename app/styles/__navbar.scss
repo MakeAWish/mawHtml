@@ -1,0 +1,158 @@
+/* Navbar dropdowns */
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li.header {
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #ffffff;
+  padding: 7px 10px;
+  border-bottom: 1px solid #f4f4f4;
+  color: #444444;
+  font-size: 14px;
+}
+
+/* Add fade animation to dropdown menus */
+.open > .dropdown-menu {
+  animation-name: fadeAnimation;
+  animation-duration: .7s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: fadeAnimation;
+  -webkit-animation-duration: .7s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeAnimation;
+  -moz-animation-duration: .7s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: forwards;
+}
+
+@keyframes fadeAnimation {
+  from {
+    opacity: 0;
+    top: 120%;
+  }
+  to {
+    opacity: 1;
+    top: 100%;
+  }
+}
+
+@-webkit-keyframes fadeAnimation {
+  from {
+    opacity: 0;
+    top: 120%;
+  }
+  to {
+    opacity: 1;
+    top: 100%;
+  }
+}
+
+/* Fix dropdown menu for small screens to display correctly on small screens */
+@media screen and (max-width: 767px) {
+  .navbar-nav > .notifications-menu > .dropdown-menu,
+  .navbar-nav > .user-menu > .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+    background: #ffffff;
+  }
+}
+
+/* Fix menu positions on xs screens to appear correctly and fully */
+@media screen and (max-width: 480px) {
+  .navbar-nav > .notifications-menu > .dropdown-menu > li.header {
+    /* Remove arrow from the top */
+  }
+  .navbar-nav > .notifications-menu > .dropdown-menu > li.header:after {
+    border-width: 0px !important;
+  }
+  .navbar-nav > .notifications-menu > .dropdown-menu {
+    position: absolute;
+    right: -170px;
+    left: auto;
+  }
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: hidden;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
+  display: block;
+  white-space: nowrap;
+  /* Prevent text from breaking */
+
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a:hover {
+  background: #f6f6f6;
+  text-decoration: none;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a {
+  font-size: 12px;
+  color: #444444;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion {
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  padding: 15px 0px;
+  margin-right: 5px;
+  /* Default background and font colors */
+
+  background: #00c0ef;
+  color: #f9f9f9;
+  /* Fallback for browsers that doesn't support rgba */
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon.danger,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa.danger,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion.danger {
+  background: #f56954;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon.warning,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa.warning,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion.warning {
+  background: #f39c12;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon.success,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa.success,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion.success {
+  background: #00a65a;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon.info,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa.info,
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion.info {
+  background: #00c0ef;
+}
