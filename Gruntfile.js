@@ -411,14 +411,31 @@ module.exports = function (grunt) {
         'uglify',
         'copy:dist',
         'modernizr',
-        'rev',
+        //'rev',
         'usemin',
         'htmlmin'
     ]);
 
+    grunt.registerTask('build-light', [
+        'clean:dist',
+        'useminPrepare',
+        'concurrent:dist',
+        'autoprefixer',
+        'concat',
+        'cssmin',
+        'copy:dist',
+        'modernizr',
+        'usemin'
+    ]);
+
+    grunt.registerTask('push', [
+        'newer:jshint',
+        'build',
+        'gh-pages'
+    ]);
+
     grunt.registerTask('default', [
         'newer:jshint',
-        'test',
-        'build'
+        'build-light'
     ]);
 };
