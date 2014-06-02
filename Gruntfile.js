@@ -1,4 +1,4 @@
-// Generated on 2014-04-03 using generator-webapp 0.4.8
+// Generated on 2014-06-01 using generator-webapp 0.4.9
 'use strict';
 
 // # Globbing
@@ -15,15 +15,17 @@ module.exports = function (grunt) {
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
+    // Configurable paths
+    var config = {
+        app: 'app',
+        dist: 'dist'
+    };
+
     // Define the configuration for all the tasks
     grunt.initConfig({
 
         // Project settings
-        config: {
-            // Configurable paths
-            app: 'app',
-            dist: 'dist'
-        },
+        config: config,
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
@@ -45,9 +47,9 @@ module.exports = function (grunt) {
             gruntfile: {
                 files: ['Gruntfile.js']
             },
-            compass: {
+            sass: {
                 files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server', 'autoprefixer']
+                tasks: ['sass:server', 'autoprefixer']
             },
             styles: {
                 files: ['<%= config.app %>/styles/{,*/}*.css'],
@@ -69,32 +71,38 @@ module.exports = function (grunt) {
         connect: {
             options: {
                 port: 9000,
+                open: true,
                 livereload: 35729,
                 // Change this to '0.0.0.0' to access the server from outside
                 hostname: 'localhost'
             },
             livereload: {
                 options: {
-                    open: true,
-                    base: [
-                        '.tmp',
-                        '<%= config.app %>'
-                    ]
+                    middleware: function(connect) {
+                        return [
+                            connect.static('.tmp'),
+                            connect().use('/bower_components', connect.static('./bower_components')),
+                            connect.static(config.app)
+                        ];
+                    }
                 }
             },
             test: {
                 options: {
+                    open: false,
                     port: 9001,
-                    base: [
-                        '.tmp',
-                        'test',
-                        '<%= config.app %>'
-                    ]
+                    middleware: function(connect) {
+                        return [
+                            connect.static('.tmp'),
+                            connect.static('test'),
+                            connect().use('/bower_components', connect.static('./bower_components')),
+                            connect.static(config.app)
+                        ];
+                    }
                 }
             },
             dist: {
                 options: {
-                    open: true,
                     base: '<%= config.dist %>',
                     livereload: false
                 }
@@ -141,30 +149,29 @@ module.exports = function (grunt) {
         },
 
         // Compiles Sass to CSS and generates necessary files if requested
-        compass: {
+        sass: {
             options: {
-                sassDir: '<%= config.app %>/styles',
-                cssDir: '.tmp/styles',
-                generatedImagesDir: '.tmp/images/generated',
-                imagesDir: '<%= config.app %>/images',
-                javascriptsDir: '<%= config.app %>/scripts',
-                fontsDir: '<%= config.app %>/styles/fonts',
-                importPath: '<%= config.app %>/bower_components',
-                httpImagesPath: '/images',
-                httpGeneratedImagesPath: '/images/generated',
-                httpFontsPath: '/styles/fonts',
-                relativeAssets: false,
-                assetCacheBuster: false
+                loadPath: [
+                    'bower_components'
+                ]
             },
             dist: {
-                options: {
-                    generatedImagesDir: '<%= config.dist %>/images/generated'
-                }
+                files: [{
+                    expand: true,
+                    cwd: '<%= config.app %>/styles',
+                    src: ['*.scss'],
+                    dest: '.tmp/styles',
+                    ext: '.css'
+                }]
             },
             server: {
-                options: {
-                    debugInfo: true
-                }
+                files: [{
+                    expand: true,
+                    cwd: '<%= config.app %>/styles',
+                    src: ['*.scss'],
+                    dest: '.tmp/styles',
+                    ext: '.css'
+                }]
             }
         },
 
@@ -187,12 +194,10 @@ module.exports = function (grunt) {
         bowerInstall: {
             app: {
                 src: ['<%= config.app %>/index.html'],
-                ignorePath: '<%= config.app %>/',
-                exclude: ['<%= config.app %>/bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap.js']
+                exclude: ['bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js']
             },
             sass: {
-                src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-                ignorePath: '<%= config.app %>/bower_components/'
+                src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}']
             }
         },
 
@@ -313,9 +318,15 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*',
-                        'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*'
+                        'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*',
+                        'styles/fonts/{,*/}*.*'
                     ]
+                }, {
+                    expand: true,
+                    dot: true,
+                    cwd: '.',
+                    src: ['bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*'],
+                    dest: '<%= config.dist %>'
                 }]
             },
             styles: {
@@ -327,30 +338,17 @@ module.exports = function (grunt) {
             }
         },
 
-        // Generates a custom Modernizr build that includes only the tests you
-        // reference in your app
-        modernizr: {
-            devFile: '<%= config.app %>/bower_components/modernizr/modernizr.js',
-            outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
-            files: [
-                '<%= config.dist %>/scripts/{,*/}*.js',
-                '<%= config.dist %>/styles/{,*/}*.css',
-                '!<%= config.dist %>/scripts/vendor/*'
-            ],
-            uglify: true
-        },
-
         // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
-                'compass:server',
+                'sass:server',
                 'copy:styles'
             ],
             test: [
                 'copy:styles'
             ],
             dist: [
-                'compass',
+                'sass',
                 'copy:styles',
                 'imagemin',
                 'svgmin'
@@ -410,32 +408,14 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        'modernizr',
-        //'rev',
+        'rev',
         'usemin',
         'htmlmin'
     ]);
 
-    grunt.registerTask('build-light', [
-        'clean:dist',
-        'useminPrepare',
-        'concurrent:dist',
-        'autoprefixer',
-        'concat',
-        'cssmin',
-        'copy:dist',
-        'modernizr',
-        'usemin'
-    ]);
-
-    grunt.registerTask('push', [
-        'newer:jshint',
-        'build',
-        'gh-pages'
-    ]);
-
     grunt.registerTask('default', [
         'newer:jshint',
-        'build-light'
+        'test',
+        'build'
     ]);
 };
