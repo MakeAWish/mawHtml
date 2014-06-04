@@ -408,14 +408,14 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        'rev',
+        //'rev',
         'usemin',
         'htmlmin'
     ]);
 
     grunt.registerTask('default', [
         'newer:jshint',
-        'test',
+        //'test',
         'build'
     ]);
 };
