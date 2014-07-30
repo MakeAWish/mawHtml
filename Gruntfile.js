@@ -361,9 +361,13 @@ module.exports = function (grunt) {
                     globals: {
                         title: 'Make A Wish'
                     },
+                    prefix: '{{',
+                    suffix: '}}',
                 },
                 src: '<%= config.app %>/html/*.html',
-                dest: '/'
+                dest: '<%= config.app %>/compile/',
+                flatten: true,
+                cwd: '.'
             }
         },
 
