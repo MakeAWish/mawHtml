@@ -355,6 +355,18 @@ module.exports = function (grunt) {
             ]
         },
 
+        includereplace: {
+            dist: {
+                options: {
+                    globals: {
+                        title: 'Make A Wish'
+                    },
+                },
+                src: '<%= config.app %>/html/*.html',
+                dest: '/'
+            }
+        },
+
         // grunt-gh-pages configuration
         'gh-pages': {
             options: {
@@ -401,6 +413,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'includereplace',
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
