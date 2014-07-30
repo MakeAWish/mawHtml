@@ -357,17 +357,16 @@ module.exports = function (grunt) {
 
         includereplace: {
             dist: {
+                cwd: '.',
                 options: {
                     globals: {
                         title: 'Make A Wish'
                     },
                     prefix: '{{',
-                    suffix: '}}',
+                    suffix: '}}'
                 },
                 src: '<%= config.app %>/html/*.html',
-                dest: '<%= config.app %>/compile/',
-                flatten: true,
-                cwd: '.'
+                dest: '<%= config.app %>/'
             }
         },
 
