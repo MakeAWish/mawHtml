@@ -18,7 +18,8 @@ module.exports = function (grunt) {
     // Configurable paths
     var config = {
         app: 'app',
-        dist: 'dist'
+        dist: 'dist',
+        compile: 'compile'
     };
 
     // Define the configuration for all the tasks
@@ -111,6 +112,14 @@ module.exports = function (grunt) {
 
         // Empties folders to start fresh
         clean: {
+            compile: {
+                files: [{
+                    dot: true,
+                    src: [
+                        '<%= config.compile %>/*'
+                    ]
+                }]
+            },
             dist: {
                 files: [{
                     dot: true,
@@ -307,6 +316,17 @@ module.exports = function (grunt) {
 
         // Copies remaining files to places other tasks can use
         copy: {
+            compile: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= config.compile %>/<%= config.app %>',
+                    dest: '<%= config.dist %>',
+                    src: [
+                        '*.html'
+                    ]
+                }]
+            },
             dist: {
                 files: [{
                     expand: true,
@@ -317,7 +337,7 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.webp',
-                        '{,*/}*.html',
+                        // '{,*/}*.html',
                         'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*',
                         'styles/fonts/{,*/}*.*'
                     ]
@@ -356,17 +376,16 @@ module.exports = function (grunt) {
         },
 
         includereplace: {
-            dist: {
-                cwd: '.',
+            compile: {
                 options: {
                     globals: {
                         title: 'Make A Wish'
-                    },
-                    prefix: '{{',
-                    suffix: '}}'
+                    }
+                    // prefix: '{{',
+                    // suffix: '}}'
                 },
-                src: '<%= config.app %>/html/*.html',
-                dest: '<%= config.app %>/'
+                src: '<%= config.app %>/*.html',
+                dest: '<%= config.compile %>/'
             }
         },
 
@@ -427,6 +446,13 @@ module.exports = function (grunt) {
         //'rev',
         'usemin',
         'htmlmin'
+    ]);
+
+    grunt.registerTask('compile', [
+        'clean:dist',
+        'clean:compile',
+        'includereplace:compile',
+        'copy:compile'
     ]);
 
     grunt.registerTask('default', [
