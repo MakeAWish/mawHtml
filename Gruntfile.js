@@ -19,7 +19,8 @@ module.exports = function (grunt) {
     var config = {
         app: 'app',
         dist: 'dist',
-        compile: 'compile'
+        compile: 'compile',
+        tmp: '.tmp'
     };
 
     // Define the configuration for all the tasks
@@ -56,13 +57,17 @@ module.exports = function (grunt) {
                 files: ['<%= config.app %>/styles/{,*/}*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']
             },
+            compile: {
+                files: ['<%= config.app %>/{,*/}*.html'],
+                tasks: ['compile', 'copy:server']
+            },
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    '<%= config.app %>/{,*/}*.html',
-                    '.tmp/styles/{,*/}*.css',
+                    '<%= config.tmp %>/{,*/}*.html',
+                    '<%= config.tmp %>/styles/{,*/}*.css',
                     '<%= config.app %>/images/{,*/}*'
                 ]
             }
@@ -94,7 +99,7 @@ module.exports = function (grunt) {
                     port: 9001,
                     middleware: function(connect) {
                         return [
-                            connect.static('.tmp'),
+                            connect.static('<%= config.tmp %>'),
                             connect.static('test'),
                             connect().use('/bower_components', connect.static('./bower_components')),
                             connect.static(config.app)
@@ -124,13 +129,13 @@ module.exports = function (grunt) {
                 files: [{
                     dot: true,
                     src: [
-                        '.tmp',
+                        '<%= config.tmp %>',
                         '<%= config.dist %>/*',
                         '!<%= config.dist %>/.git*'
                     ]
                 }]
             },
-            server: '.tmp'
+            server: '<%= config.tmp %>'
         },
 
         // Make sure code styles are up to par and there are no obvious mistakes
@@ -169,7 +174,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= config.app %>/styles',
                     src: ['*.scss'],
-                    dest: '.tmp/styles',
+                    dest: '<%= config.tmp %>/styles',
                     ext: '.css'
                 }]
             },
@@ -178,7 +183,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= config.app %>/styles',
                     src: ['*.scss'],
-                    dest: '.tmp/styles',
+                    dest: '<%= config.tmp %>/styles',
                     ext: '.css'
                 }]
             }
@@ -192,9 +197,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '.tmp/styles/',
+                    cwd: '<%= config.tmp %>/styles/',
                     src: '{,*/}*.css',
-                    dest: '.tmp/styles/'
+                    dest: '<%= config.tmp %>/styles/'
                 }]
             }
         },
@@ -295,7 +300,7 @@ module.exports = function (grunt) {
         //     dist: {
         //         files: {
         //             '<%= config.dist %>/styles/main.css': [
-        //                 '.tmp/styles/{,*/}*.css',
+        //                 '<%= config.tmp %>/styles/{,*/}*.css',
         //                 '<%= config.app %>/styles/{,*/}*.css'
         //             ]
         //         }
@@ -316,12 +321,12 @@ module.exports = function (grunt) {
 
         // Copies remaining files to places other tasks can use
         copy: {
-            compile: {
+            server: {
                 files: [{
                     expand: true,
                     dot: true,
                     cwd: '<%= config.compile %>/<%= config.app %>',
-                    dest: '<%= config.dist %>',
+                    dest: '<%= config.tmp %>',
                     src: [
                         '*.html'
                     ]
@@ -341,19 +346,29 @@ module.exports = function (grunt) {
                         'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*',
                         'styles/fonts/{,*/}*.*'
                     ]
-                }, {
+                }, 
+                {
                     expand: true,
                     dot: true,
                     cwd: '.',
                     src: ['bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*'],
                     dest: '<%= config.dist %>'
+                },
+                {
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= config.compile %>/<%= config.app %>',
+                    dest: '<%= config.dist %>',
+                    src: [
+                        '*.html'
+                    ]
                 }]
             },
             styles: {
                 expand: true,
                 dot: true,
                 cwd: '<%= config.app %>/styles',
-                dest: '.tmp/styles/',
+                dest: '<%= config.tmp %>/styles/',
                 src: '{,*/}*.css'
             }
         },
@@ -362,6 +377,7 @@ module.exports = function (grunt) {
         concurrent: {
             server: [
                 'sass:server',
+                'copy:server',
                 'copy:styles'
             ],
             test: [
@@ -381,8 +397,6 @@ module.exports = function (grunt) {
                     globals: {
                         title: 'Make A Wish'
                     }
-                    // prefix: '{{',
-                    // suffix: '}}'
                 },
                 src: '<%= config.app %>/*.html',
                 dest: '<%= config.compile %>/'
@@ -406,6 +420,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
+            'compile',
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
@@ -435,6 +450,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'compile:dist',
         'includereplace',
         'useminPrepare',
         'concurrent:dist',
@@ -448,12 +464,12 @@ module.exports = function (grunt) {
         'htmlmin'
     ]);
 
-    grunt.registerTask('compile', [
-        'clean:dist',
-        'clean:compile',
-        'includereplace:compile',
-        'copy:compile'
-    ]);
+    grunt.registerTask('compile', function (target) {
+        grunt.task.run([
+            'clean:compile',
+            'includereplace:compile'
+        ]);
+    });
 
     grunt.registerTask('default', [
         'newer:jshint',
