@@ -394,6 +394,7 @@ module.exports = function (grunt) {
         includereplace: {
             compile: {
                 options: {
+                    includesDir: '<%= config.app %>/html',
                     globals: {
                         title: 'Make A Wish'
                     }
