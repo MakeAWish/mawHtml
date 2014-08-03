@@ -4,10 +4,14 @@
 .small-box {
   position: relative;
   display: block;
-  -webkit-border-radius: 2px;
+  -webkit-border-radius: 4px;
+  border: solid 3px $purple;
   -moz-border-radius: 2px;
-  border-radius: 2px;
+  border-radius: 10px;
   margin-bottom: 15px;
+  box-shadow: gray 2px 2px 2px;
+
+
 
   > .inner {
     padding: 10px;
@@ -23,6 +27,9 @@
     z-index: 10;
     background: rgba(0, 0, 0, 0.1);
     text-decoration: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
 
     &:hover {
       color: #fff;
@@ -39,6 +46,7 @@
     text-overflow: ellipsis;
     padding-right: 90px;
     overflow: hidden;
+    color: #404040;
   }
 
   p {
