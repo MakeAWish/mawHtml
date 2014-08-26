@@ -1,7 +1,7 @@
 /* Navbar */
 
 .navbar {
-  background-color: $almost-white;
+  background-color: $white;
   border-bottom: 1px solid #eee;
 
   .nav > li > a {
@@ -27,8 +27,8 @@
     font-weight: 500;
     height: 50px;
     display: block;
-    background-color: $blue;
-    color: $light-gray;
+    background-color: $aqua;
+    color: $white;
 
     &:hover {
       color: $white;

@@ -19,7 +19,7 @@
 }
 
 .bg-cat1 {
-  background-color: $white !important;
+  border-top: solid 10px $turquoise;
 }
 
 .bg-black {
@@ -27,59 +27,59 @@
 }
 
 .bg-cat2 {
-  background-color: #EECEFF !important;
+  border-top: solid 10px $green !important;
 }
 
 .bg-cat3 {
-  background-color: #D6F4FF !important;
+  border-top: solid 10px $blue !important;
 }
 
 .bg-cat4 {
-  background-color: #BAFFBA !important;
+  border-top: solid 10px $purple !important;
 }
 
 .bg-cat5 {
-  background-color: #ECFFA3 !important;
+  border-top: solid 10px $dark-gray !important;
 }
 
 .bg-cat6 {
-  background-color: $light-blue !important;
+  border-top: solid 10px $dark-turquoise !important;
 }
 
 .bg-cat7 {
-  background-color: $green !important;
+  border-top: solid 10px $dark-green !important;
 }
 
 .bg-cat8 {
-  background-color: $navy !important;
+  border-top: solid 10px $dark-blue !important;
 }
 
 .bg-cat9 {
-  background-color: $teal !important;
+  border-top: solid 10px $dark-purple !important;
 }
 
 .bg-cat10 {
-  background-color: $olive !important;
+  border-top: solid 10px $yellow !important;
 }
 
 .bg-cat11 {
-  background-color: $lime !important;
+  border-top: solid 10px $orange !important;
 }
 
 .bg-cat12 {
-  background-color: $orange !important;
+  border-top: solid 10px $red !important;
 }
 
 .bg-cat13 {
-  background-color: $fuchsia !important;
+  border-top: solid 10px $dark-red !important;
 }
 
 .bg-cat14 {
-  background-color: $purple !important;
+  border-top: solid 10px $silver !important;
 }
 
 .bg-cat15 {
-  background-color: $maroon !important;
+  border-top: solid 4px $dark-orange !important;
 }
 
 /* Text colors */
@@ -92,7 +92,7 @@
 }
 
 .text-cat4 {
-  color: $aqua !important;
+  color: $blue !important;
 }
 
 .text-cat5 {
@@ -100,7 +100,7 @@
 }
 
 .text-cat6 {
-  color: $light-blue !important;
+  color: $blue !important;
 }
 
 .text-cat7 {
@@ -108,19 +108,19 @@
 }
 
 .text-cat8 {
-  color: $navy !important;
+  color: $dark-blue !important;
 }
 
 .text-cat9 {
-  color: $teal !important;
+  color: $dark-gray !important;
 }
 
 .text-cat10 {
-  color: $olive !important;
+  color: $dark-green !important;
 }
 
 .text-cat11 {
-  color: $lime !important;
+  color: $green !important;
 }
 
 .text-cat12 {
@@ -128,7 +128,7 @@
 }
 
 .text-cat13 {
-  color: $fuchsia !important;
+  color: $red !important;
 }
 
 .text-cat14 {
@@ -136,5 +136,5 @@
 }
 
 .text-cat15 {
-  color: $maroon !important;
+  color: $dark-red !important;
 }
