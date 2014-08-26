@@ -4,14 +4,11 @@
 .small-box {
   position: relative;
   display: block;
-  -webkit-border-radius: 4px;
-  border: solid 3px $purple;
-  -moz-border-radius: 2px;
-  border-radius: 10px;
+  border-bottom: solid 1px $silver;
+  border-left: solid 1px $silver;
+  border-right: solid 1px $silver;
   margin-bottom: 15px;
-  box-shadow: gray 2px 2px 2px;
-
-
+  background-color: $white;
 
   > .inner {
     padding: 10px;
@@ -19,23 +16,21 @@
 
   > .small-box-footer {
     position: relative;
-    text-align: center;
-    padding: 3px 0;
-    color: #fff;
-    color: rgba(255, 255, 255, 0.8);
-    display: block;
+    text-align: left;
+    padding: 5px 10px;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    text-decoration: underline;
+    border-top: solid 1px $silver;
+    word-spacing: 15px;
+    
 
 
     &:hover {
       color: #fff;
       background: rgba(0, 0, 0, 0.15);
     }
-  }
+
+}
 
   h3 {
     font-size: 20px;
