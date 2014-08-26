@@ -346,7 +346,7 @@ module.exports = function (grunt) {
                         'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*',
                         'styles/fonts/{,*/}*.*'
                     ]
-                }, 
+                },
                 {
                     expand: true,
                     dot: true,
@@ -465,7 +465,7 @@ module.exports = function (grunt) {
         'htmlmin'
     ]);
 
-    grunt.registerTask('compile', function (target) {
+    grunt.registerTask('compile', function () {
         grunt.task.run([
             'clean:compile',
             'includereplace:compile'
