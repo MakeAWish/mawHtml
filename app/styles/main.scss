@@ -1,19 +1,16 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
 // bower:scss
-@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 // endbower
 @import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
 
-// bower:scss
 @import "__variables.scss";
-
 @import "__button.scss";
 @import "__boxes.scss";
 @import "__colors.scss";
 @import "__navbar.scss";
 @import "__small-boxes.scss";
-// endbower
 
 .browsehappy {
   margin: 0.2em 0;
@@ -32,7 +29,7 @@ html, body {
   background: none;
 
   h1 {
-    font-family: 'Kaushan Script', cursive; 
+    font-family: 'Kaushan Script', cursive;
   }
 
   .account {

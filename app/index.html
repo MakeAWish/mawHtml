@@ -1,35 +1,75 @@
 <!doctype html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
-    @@include('/head.partial.html', {"description": "Coucou"})
-    <body>
-        @@include('/browsehappy.partial.html', {})
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<title>@@title - Index</title>
+	<meta name="description" content="@@description">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
 
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron">
-            <div class="container">
-                <h1>Make A Wish</h1>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	@@include('/browsehappy.partial.html', {})
 
-                <ul>
-                	<li><a href="home.html">Accueil</a></li>
-	                <li>Voeux
-	                	<ul>
-                			<li><a href="wish_new.html">Nouveau</a></li>
-                            <li><a href="wish_edit.html">Modifier</a></li>
-                			<li><a href="wish_show.html">Afficher</a></li>
-                			<li><a href="wish_list.html">Lister</a></li>
-                		</ul>
-                	</li>
-                </ul>
-            </div>
-        </div>
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Make A Wish</h1>
 
-        @@include('/footer.partial.html', {})
-    </body>
+			<ul>
+				<li><a href="home.html">Accueil</a></li>
+				<li>Voeux
+					<ul>
+						<li><a href="wish_new.html">Nouveau</a></li>
+						<li><a href="wish_edit.html">Modifier</a></li>
+						<li><a href="wish_show.html">Afficher</a></li>
+						<li><a href="wish_list.html">Lister</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:js scripts/plugins.js -->
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="scripts/main.js"></script>
+	<!-- endbuild -->
+
+
+</body>
 </html>

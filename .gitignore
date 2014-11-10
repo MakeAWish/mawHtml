@@ -4,6 +4,5 @@ compile
 .tmp
 .sass-cache
 .grunt
-app/bower_components
-test/bower_components
 Thumbs.db
+bower_components
