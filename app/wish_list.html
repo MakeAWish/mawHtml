@@ -9,28 +9,13 @@
 <html class="no-js"> <!--<![endif]-->
 @@include('/head.partial.html', {"description": "Coucou"})
 <body>
-    @@include('/browsehappy.partial.html', {})
+    
     @@include('/navbar.in.partial.html', {})
 
-    <div class="container">
-
-    <section class="content-header">
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="glyphicon glyphicon-gift"></i> Wishlist</a></li>
-            <li class="active">Liste des voeux</li>
-        </ol>
-    </section>
-
-
-    <button type="button" class="btn btn-success btn-lg">
-        <span class="glyphicon glyphicon-plus"></span> Ajouter un voeu
-    </button>
-
-
-    <section class="content">
+   
 
     <!-- Small boxes (Wish boxes) -->
-    <div class="row">
+    
 
         @@include('/smallbox.partial.html', {"category": "cat1", "title": "Voyage à Bora-bora", "description" : "Histoire de découvrir les merveilles des plages de sable fin", "icon": "globe"})
     
@@ -60,15 +45,10 @@
     
         @@include('/smallbox.partial.html', {"category": "cat14", "title": "Téléphone", "description" : "Vive la société de consommation !", "icon": "phone"})
 
-    </div>
+    
     <!-- /.row of small boxes -->
 
 
-    </section>
-    </div>
-    <!-- /.container -->
-
-
-    @@include('/footer.partial.html', {})
+    
     </body>
 </html>
