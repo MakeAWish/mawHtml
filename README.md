@@ -1,4 +1,4 @@
-# Installation
+# Installation de cette version AdminLTE
 
 ## node.js and npm
 
