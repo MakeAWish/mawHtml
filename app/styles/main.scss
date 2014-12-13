@@ -4,6 +4,27 @@
 
 @import url(http://fonts.googleapis.com/css?family=Alex+Brush);
 
+@import url(http://fonts.googleapis.com/css?family=Sofia);
+
+
+input[type="range"].vVertical {
+   -webkit-appearance: slider-vertical;
+   background-color: pink;
+   width: 10px;
+   height:200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 body {
     font-family: 'Arial';
     margin: 0px;
@@ -140,6 +161,7 @@ h1.typein {
     text-shadow: 2px 1px 2px silver;
 }
 
+
 h2 {
     font-family: 'Redressed';
     font-weight: normal;
@@ -168,11 +190,13 @@ section.typein, section.question {
 p.typein, p.question {
     text-align: right;
     clear: both;
+    line-height: 20px;
 }
 
 p.typein label {
     float: left;
-    padding-top: 5px;
+    font-family: 'Sofia';
+    font-size: 20px;
 }
 
 .typein textarea, .typein input {
@@ -255,12 +279,13 @@ header span {
 
     h1 {
         margin: 0px;
-        width: 150px;
-        padding-right: 15px;
+        width: 200px;
+        padding-top: 5px;
         padding-left: 15px;
         float: left;
         font-family: 'Alex Brush', cursive;
         font-weight: normal;
+        font-size: 40px;
     }
 
 
@@ -275,10 +300,11 @@ header span {
         display: inline-block;
         clear: both;
         margin: 0 30px;
+        font-family: 'Sofia', cursive;
+        font-size: 22px;
     }
 
     a {
-        font-family: 'Redressed';
         font-size: 1.3em;
         text-decoration: none;
         padding: 10px 15px;
@@ -293,12 +319,18 @@ header span {
 }
 
 #filter {
-    background-color: silver;
+    background: url("../images/polish.png") no-repeat, url("../images/noisy.gif") -50% -10%, #C0C0C0;
     color: black;
-    clear: both;
-    width: 180px;
+    width: 215px;
     padding-left: 15px;
     margin: 0px;
+    font-family: 'Sofia';
+    font-size: 15px;
+
+    ul {
+        list-style-type: none;
+    }
+    
 
     p {
         margin: 0px;
@@ -306,10 +338,16 @@ header span {
         padding-bottom: 5px;
     }
 
+    input[type=range] {
+        margin-left: 32px;
+        height: 70px;
+    }
+
+    a {
+        text-decoration: none;
+    }
 
 }
-
-
 
 /*********************************************************************************************************************/
 /****** Le style des sections de contenu des pages Wishlist, Faire un cadeau et Giftlist => quand l'utilisateur ******/
