@@ -13,38 +13,25 @@
     @@include('/navbar.in.partial.html', {})
 
    
+<main>
 
+<div>
     <!-- Small boxes (Wish boxes) -->
-    
 
-        @@include('/smallbox.partial.html', {"category": "cat1", "title": "Voyage à Bora-bora", "description" : "Histoire de découvrir les merveilles des plages de sable fin", "icon": "globe"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat2", "title": "Hunger Games", "description" : "Un arcs, des flèches, des écureils et des glands", "icon": "film"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat3", "title": "Piña Colada", "description" : "Parce que la vie est plus douce avec une pointe de Rhum", "icon": "glass"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat4", "title": "Dafte Pounk", "description" : "Harder, better, faster, stronger", "icon": "music"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat5", "title": "Dîner au restaurant entre amis", "description" : "Parceque c'est super chouette les amis quand-même, non ?", "icon": "cutlery"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat6", "title": "Une agrapheuse pour le travail", "description" : "Cause pink is forever", "icon": "paperclip"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat7", "title": "Une véranda pour le jardin qui serait joli pour améliorer un peu notre petite villa bouscataise", "description" : "Arrrrrrgent ! Pour augmenter la valeur de la maison :)", "icon": "home"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat8", "title": "Boing 747", "description" : "Si Hollande en a un, pourquoi pas moi ?", "icon": "plane"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat9", "title": "Téléphone", "description" : "Vive la société de consommation !", "icon": "phone"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat10", "title": "Téléphone", "description" : "Vive la société de consommation !", "icon": "phone"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat11", "title": "Téléphone", "description" : "Vive la société de consommation !", "icon": "phone"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat12", "title": "Téléphone", "description" : "Vive la société de consommation !", "icon": "phone"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat13", "title": "Téléphone", "description" : "Vive la société de consommation !", "icon": "phone"})
-    
-        @@include('/smallbox.partial.html', {"category": "cat14", "title": "Téléphone", "description" : "Vive la société de consommation !", "icon": "phone"})
-
+        @@include('/wishbox.html', {"category": "Voyage", "title": "Voyage à Bora Bora"})
+        @@include('/wishbox.html', {"category": "Multimédia", "title": "Un nouveau téléphone"})
+        @@include('/wishbox.html', {"category": "Animaux", "title": "Une tortue"})
+        @@include('/wishbox.html', {"category": "Mode", "title": "Des millions de chaussures"})
+        @@include('/wishbox.html', {"category": "Sport", "title": "Un snowboard"})
+</div>
+<div>
+        @@include('/wishbox.html', {"category": "Déco", "title": "Un miroir de salle de bain"})
+        @@include('/wishbox.html', {"category": "Cuisine", "title": "Un thermomix"})
+        @@include('/wishbox.html', {"category": "Culture", "title": "Des livres"})
+        @@include('/wishbox.html', {"category": "Jardinage", "title": "Une bétonnière"})
+</div>
+        
+</main>
     
     <!-- /.row of small boxes -->
 
