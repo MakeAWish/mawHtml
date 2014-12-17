@@ -1,0 +1,341 @@
+/*********************************************************************************************************************/
+/********************************************** Polices **************************************************************/
+/*********************************************************************************************************************/
+
+@import url(http://fonts.googleapis.com/css?family=Alex+Brush);
+
+@import url(http://fonts.googleapis.com/css?family=Sofia);
+
+
+/*********************************************************************************************************************/
+/***************************************** Règles générales **********************************************************/
+/*********************************************************************************************************************/
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial';
+    margin: 0px;
+    color: black;
+}
+
+/*********************************************************************************************************************/
+/***************************************** Grille ********************************************************************/
+/*********************************************************************************************************************/
+
+/* on va voir si on s'en sert vraiment
+
+.col-1-7 {
+    float: left;
+    width: 14%;
+}
+
+.col-6-7 {
+    float: left;
+    width: 86%;
+}
+.col-1-2 {
+    float: left;
+    width: 50%;
+}
+
+*/
+
+/*********************************************************************************************************************/
+/******************************************* Page de login ***********************************************************/
+/*********************************************************************************************************************/
+
+header {
+    margin-top: 12%;
+    margin-bottom: 60px;
+    font-family: 'Alex Brush';
+    font-size: 5em;
+    text-align: center;
+    text-shadow: 2px 1px 2px silver;
+}
+
+section {
+    display: block;
+    margin: 0px auto;
+    width: 350px;
+
+    p {
+        text-align: right;
+        clear: both;
+        line-height: 20px;
+
+        label {
+            float: left;
+            font-family: 'Sofia';
+            font-size: 20px;
+        }
+
+        input {
+            width: 150px;
+            font-family: 'Arial';
+        }
+
+        a {
+            display: block;
+            float: right;
+            font-size: 0.8em;
+            color: gray;
+            font-style: italic;
+            margin-top: 3px;
+        }
+    }
+
+    &.submit_1 {
+        width: 52px;
+        height: 40px;
+        margin: 40px auto 0px auto;
+
+        input {
+            display: inline-block;
+            vertical-align: top;
+            width: 32px;
+            height: 37px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        input.validate {
+            background: url(../images/tick.png) no-repeat;
+        }
+    }
+}
+
+
+
+
+/**** Voir si utile *****/
+
+.typein input:valid {
+    box-shadow: 0 0 2px 1px green;
+}
+
+.typein input:invalid {
+    box-shadow: 0 0 2px 1px red;
+}
+
+
+/*********************************************************************************************************************/
+/************************************ Barre de navigation horizontale  ***********************************************/
+/*********************************************************************************************************************/
+
+nav {
+    margin: 0;
+    background: url("../images/black_lozenge.png") #000000 repeat fixed;
+    color: white;
+    display: block;
+    line-height: 60px;
+    height: 60px;
+    width: 100%;
+    -moz-box-shadow: 0px 0px 5px black;
+    -webkit-box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 5px black;
+    position: relative;
+    z-index: 2;
+
+    h1 {
+        margin: 0px;
+        padding-left: 15px;
+        float: left;
+        font-family: 'Alex Brush', cursive;
+        font-weight: normal;
+        font-size: 2.5em;
+        width: 20%;
+    }
+}
+
+/*********************************************************************************************************************/
+/************************************ Barre de navigation verticale  *************************************************/
+/*********************************************************************************************************************/
+
+aside {
+    background: url("../images/light_grey.png") #C0C0C0 repeat fixed;
+    color: black;
+    padding-left: 15px;
+    margin: 0px;
+    font-family: 'Sofia';
+    width: 20%;
+    float:left;
+    position: relative;
+    z-index: 1;
+
+    ul {
+        list-style-type: none;
+        margin-top: 0px;
+
+        li{
+            font-size: 1em;
+        }
+
+        label {
+            padding-left: 5px;
+        }
+    }
+
+    ol {
+        list-style-type: none;
+        margin-top: 0px;
+
+        li{
+            font-size: 1em;
+
+            &:first-of-type {
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                
+                label {
+                    border-bottom: 1px dashed black;
+                    padding-bottom: 10px;  
+                }   
+            }
+        }
+
+        label {
+            padding-left: 10px;
+        }
+    }
+    
+
+    p {
+        margin: 0px;
+        padding-top: 20px;
+        padding-bottom: 5px;
+        font-size: 1.2em;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+}
+
+/*********************************************************************************************************************/
+/************************************ Liste des voeux  ***************************************************************/
+/*********************************************************************************************************************/
+
+main {
+    width: 80%;
+    float: left;
+
+    div {
+        width: 33.3333333333333333%;
+        float: left;
+        padding-left: 20px;
+
+        &:last-of-type {
+            padding-right: 20px;
+        }
+
+        article {
+            width: 100%;
+            float: left;
+            margin-top: 20px;
+            border: 1px solid;
+            @mixin colors($color) {
+                border-color: $color;
+
+                footer, header, h2 {
+                    border-color: $color;
+                }
+
+                header {
+                    background-color: $color;
+                }
+            }
+
+            &.voyage {
+                @include colors(#16a085);
+            }
+
+            &.multimedia {
+                @include colors(#2c3e50);
+            }
+
+            &.animaux {
+                @include colors(#e67e22);
+            }
+
+            &.sport {
+                @include colors(#f1c40f);
+            }
+
+            &.mode {
+                @include colors(#8e44ad);
+            }
+
+            &.deco {
+                @include colors(#e74c3c);
+            }
+
+            &.cuisine {
+                @include colors(#c0392b);
+            }
+
+            &.culture {
+                @include colors(#3498db);
+            }
+
+            &.jardinage {
+                @include colors(#2ecc71);
+            }
+
+            header {
+                clear: both;
+                font-family: 'Sofia';
+                font-size: 1em;
+                margin: 0px;
+                border-bottom: 1px solid;
+                text-shadow: none;
+                color: white;
+
+                
+
+            }
+
+            h2 {
+                clear: both;
+                padding: 0 20px 20px 20px;
+                font: normal normal normal normal 1.5em normal  'Sofia'; 
+                /* font-style / variant / weight / stretch / size / line-height / family */
+                border-bottom: 1px solid;
+                margin-bottom: 0;
+                text-align: center;
+            }
+
+            footer {
+                display: flex; /* crée un contexte flex pour ses enfants */
+                flex-direction: row; /* affichage horizontal */
+                width: 100%;
+                background: url("../images/footer.png") silver repeat fixed;
+
+                a {
+                    flex: 1; /* occupe la largeur restante */
+                    transition: flex .5s;
+                    display: block;
+                    padding: .3em .3em .3em 1.5em;
+                    color: gray;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    font-size: 0.8em;
+
+                    &:hover, &:focus {
+                      flex: 2;
+                      color: black;
+                    }
+                   
+                }
+            }
+
+        }
+    }
+}
+

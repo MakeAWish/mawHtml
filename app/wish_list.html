@@ -1,0 +1,44 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+@@include('/head.partial.html', {"description": "Coucou"})
+<body>
+    
+    @@include('/navbar.in.partial.html', {})
+
+   
+<main>
+
+<div>
+    <!-- Small boxes (Wish boxes) PENSER A METTRE UN MAXIMUM DE 55 CARACTERES DANS LA SAISIE DU TITRE DU VOEU -->
+
+        @@include('/wishbox.html', {"category": "Voyage", "title": "Voyage à Bora Bora", "class":"voyage"})
+        @@include('/wishbox.html', {"category": "Multimédia", "title": "Un nouveau téléphone hyper zazou qui fait plein de trucs", "class":"multimedia"})
+        @@include('/wishbox.html', {"category": "Animaux", "title": "Une tortue", "class":"animaux"})
+</div>
+<div>
+        @@include('/wishbox.html', {"category": "Mode", "title": "Des millions de chaussures et de sacs à main", "class":"mode"})
+        @@include('/wishbox.html', {"category": "Sport", "title": "Un snowboard", "class":"sport"})
+        @@include('/wishbox.html', {"category": "Déco", "title": "Un miroir de salle de bain", "class":"deco"})
+
+</div>
+<div>
+        @@include('/wishbox.html', {"category": "Cuisine", "title": "Un thermomix", "class":"cuisine"})
+        @@include('/wishbox.html', {"category": "Culture", "title": "Comment parler du racisme aux enfants ?", "class":"culture"})
+        @@include('/wishbox.html', {"category": "Jardinage", "title": "Une bétonnière pour faire du béton avec mes gendres", "class":"jardinage"})
+</div>
+        
+</main>
+    
+    <!-- /.row of small boxes -->
+
+
+    
+    </body>
+</html>

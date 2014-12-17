@@ -1,0 +1,159 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+@@include('/head.partial.html', {"description": "Coucou"})
+<body>
+    @@include('/browsehappy.partial.html', {})
+    @@include('/navbar.in.partial.html', {})
+
+<div class="container">
+    <section class="content-header">
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="glyphicon glyphicon-gift"></i> Voeux</a></li>
+            <li class="active">Ajouter un voeu</li>
+        </ol>
+    </section>
+    <section class="content">
+
+        <div class="row">
+            <section class="col-md-6 col-xs-12">
+
+                <!-- Form box -->
+                <div class="box box-info">
+                    <div class="box-header">
+                        <h3 class="box-title">Mon souhait</h3>
+                    </div>
+                    <div class="box-body">
+                        <form role="form">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="title">Titre</label>
+                                    <input type="text" class="form-control" id="title"
+                                           value="Etre heureux comme un rat des champs">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control"
+                                              id="description">Courir tout nu dans les champs de blé</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category">Catégorie</label>
+                                    <select class="form-control" id="category">
+                                        <option value="Default">Catégorie</option>
+                                        <option value="Enfants">Enfants</option>
+                                        <option value="Jeux">Jeux</option>
+                                        <option value="Bricolage" selected="selected">Bricolage</option>
+                                        <option value="Cuisine">Cuisine</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Modifier</button>
+                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </section>
+            <section class="col-md-6 col-xs-12">
+                <!-- Chat box -->
+                <div class="box box-success">
+                    <div class="box-header">
+                        <h3 class="box-title"><i class="glyphicon glyphicon-comment"></i> Discussion</h3>
+
+                        <div class="box-tools pull-right" data-toggle="tooltip" title="" data-original-title="Status">
+                            <div class="btn-group" data-toggle="btn-toggle">
+                                <button type="button" class="btn btn-default btn-sm active"><i
+                                        class="glyphicon glyphicon-stop text-green"></i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i
+                                        class="glyphicon glyphicon-stop text-red"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slimScrollDiv">
+                        <div class="box-body chat" id="chat-box">
+                            <!-- chat item -->
+                            <div class="item">
+                                <img src="./images/avatars/assassin_avatar.png" alt="user image" class="online">
+
+                                <p class="message">
+                                    <a href="#" class="name">
+                                        <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>
+                                            2:15
+                                        </small>
+                                        Ezio Auditore Da Firente
+                                    </a>
+                                    Moi j'aurais bien buté un ou deux romains, quand même, pour l'exemple. Non mais
+                                    c'est quoi cette société policée où on ne peut plus sortir sa lame et faire une
+                                    carnage sans que ça ne provoque une émeute ?!
+                                </p>
+                                <!-- /.attachment -->
+                            </div>
+                            <!-- /.item -->
+                            <!-- chat item -->
+                            <div class="item">
+                                <img src="./images/avatars/mom_avatar.png" alt="user image" class="offline">
+
+                                <p class="message">
+                                    <a href="#" class="name">
+                                        <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>
+                                            5:15
+                                        </small>
+                                        Mum
+                                    </a>
+                                    Coucou mes chéris, c'est pour vous dire que ce soir, c'est à 19h. N'en parler pas
+                                    aux autres, c'est une surprise. Quand même, je ne sais pas si c'est au bon endroit
+                                    que j'écris pour envoyer un mail. Si je clique sur "Envoyer", c'est bon ?
+                                </p>
+                            </div>
+                            <!-- /.item -->
+                            <!-- chat item -->
+                            <div class="item">
+                                <img src="./images/avatars/nurse_avatar.png" alt="user image" class="offline">
+
+                                <p class="message">
+                                    <a href="#" class="name">
+                                        <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>
+                                            5:30
+                                        </small>
+                                        Mamaine
+                                    </a>
+                                    Non mais celui-là, quelle grosse tarlouze ! Je vais devoir lui palper les coroñes
+                                    pour vérifier qu'elles sont bien là.
+                                </p>
+                            </div>
+                            <!-- /.item -->
+                        </div>
+                    </div>
+                    <!-- /.chat -->
+                    <div class="box-footer">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Type message...">
+
+                            <div class="input-group-btn">
+                                <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box (chat box) -->
+            </section>
+        </div>
+        <!-- /.row of large boxes -->
+
+    </section>
+</div>
+<!-- /.container -->
+
+@@include('/footer.partial.html', {})
+</body>
+</html>
