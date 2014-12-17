@@ -1,8 +1,0 @@
-node_modules
-dist
-compile
-.tmp
-.sass-cache
-.grunt
-Thumbs.db
-bower_components

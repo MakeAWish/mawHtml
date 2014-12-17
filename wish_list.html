@@ -21,6 +21,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
@@ -33,502 +34,189 @@
 </head>
 
 <body>
-    <!--[if lt IE 10]>
-	<p class="browsehappy">Vous utilisez un navigateur <strong>dépassés</strong>. Merci de <a
-        href="http://browsehappy.com/">mettre à jour votre navigateur</a> pour améliorer votre expérience.</p>
-<![endif]-->
-    <div class="navbar navbar-maw" role="navigation">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Make A Wish</a>
-    </div>
-    <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Voeux</a></li>
-            <li><a href="#">Offrir</a></li>
-            <li><a href="#">Evénements</a></li>
-        </ul>
-        <div class="navbar-right">
-            <ul class="nav navbar-nav">
-                <!-- Notifications: style can be found in dropdown.less -->
-                <li class="dropdown notifications-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="glyphicon glyphicon-exclamation-sign"></i>
-                        <span class="label label-warning">10</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">Vous avez 5 notifications&nbsp:</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
-                            <ul class="menu">
-                                <li>
-                                    <a href="#">
-                                        <i class="glyphicon glyphicon-user info"></i> Votre profil est rempli à 90%
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="glyphicon glyphicon-warning-sign danger"></i> Ne ratez pas
-                                                                                                l'anniversaire de Thimothée
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="glyphicon glyphicon-transfer warning"></i> 5 nouveaux membres
-                                    </a>
-                                </li>
+    
+    <nav>
+  <h1>Make a wish</h1>
+</nav>
 
-                                <li>
-                                    <a href="#">
-                                        <i class="glyphicon glyphicon-thumbs-up success"></i> 11 cadeaux offerts, super
-                                                                                              !
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="glyphicon glyphicon-pencil danger"></i> Votre modification de profil a
-                                                                                          bien été prise en compte
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footer"><a href="#">View all</a></li>
-                    </ul>
-                </li>
-                <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="glyphicon glyphicon-user"></i>
-                        <span>Marie-Emmanuelle <i class="caret"></i></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="glyphicon glyphicon-user"></span> Profil</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!--/.nav-collapse -->
+<aside>
+    <p><a href="#">Ajouter un voeu</a></p>
+    <p>Filtrer par catégorie :</p>
+    <ul>
+        <li><input type="checkbox" name="jeux"> <label for "jeux">Jeux</label></li>
+        <li><input type="checkbox" name="culture"> <label for "jeux">Culture</label></li>
+        <li><input type="checkbox" name="cuisine"> <label for "jeux">Cuisine</label></li>
+        <li><input type="checkbox" name="mode"> <label for "jeux">Mode</label></li>
+    </ul>
+
+    <p>Wishlists :</p>
+    <ol>
+      <li><input name="wl" type="radio"><label>Ma wishlist</label></li>
+      <li><input name="wl" type="radio"><label>Anne-Julie</label></li>
+      <li><input name="wl" type="radio"><label>Annie</label></li>
+      <li><input name="wl" type="radio"><label>Aurore</label></li>
+      <li><input name="wl" type="radio"><label>Boris</label></li>
+      <li><input name="wl" type="radio"><label>Carole</label></li>
+      <li><input name="wl" type="radio"><label>Catherine</label></li>
+      <li><input name="wl" type="radio"><label>Christophe</label></li>
+      <li><input name="wl" type="radio"><label>Fabien</label></li>
+      <li><input name="wl" type="radio"><label>Francis</label></li>
+      <li><input name="wl" type="radio"><label>Hélène</label></li>
+      <li><input name="wl" type="radio"><label>Jean-David</label></li>
+      <li><input name="wl" type="radio"><label>Philippe</label></li>
+      <li><input name="wl" type="radio"><label>Sébastien</label></li>
+      <li><input name="wl" type="radio"><label>Zach-Gaby</label></li>
+
+    </ol>  
+
+</aside>
+
+
+
+   
+<main>
+
+<div>
+    <!-- Small boxes (Wish boxes) PENSER A METTRE UN MAXIMUM DE 55 CARACTERES DANS LA SAISIE DU TITRE DU VOEU -->
+
+        <article class="voyage">
+	<header>
+		Voyage
+	</header>
+	<h2>
+		Voyage à Bora Bora
+	</h2>
+	<footer>
+		<a href="#">Lien</a>
+  		<a href="#">Modifier</a>
+  		<a href="#">Supprimer</a>
+	</footer>
+</article>
+
+        <article class="multimedia">
+	<header>
+		Multimédia
+	</header>
+	<h2>
+		Un nouveau téléphone hyper zazou qui fait plein de trucs
+	</h2>
+	<footer>
+		<a href="#">Lien</a>
+  		<a href="#">Modifier</a>
+  		<a href="#">Supprimer</a>
+	</footer>
+</article>
+
+        <article class="animaux">
+	<header>
+		Animaux
+	</header>
+	<h2>
+		Une tortue
+	</h2>
+	<footer>
+		<a href="#">Lien</a>
+  		<a href="#">Modifier</a>
+  		<a href="#">Supprimer</a>
+	</footer>
+</article>
+
 </div>
-<!-- /.navbar -->
+<div>
+        <article class="mode">
+	<header>
+		Mode
+	</header>
+	<h2>
+		Des millions de chaussures et de sacs à main
+	</h2>
+	<footer>
+		<a href="#">Lien</a>
+  		<a href="#">Modifier</a>
+  		<a href="#">Supprimer</a>
+	</footer>
+</article>
 
-    <div class="container">
+        <article class="sport">
+	<header>
+		Sport
+	</header>
+	<h2>
+		Un snowboard
+	</h2>
+	<footer>
+		<a href="#">Lien</a>
+  		<a href="#">Modifier</a>
+  		<a href="#">Supprimer</a>
+	</footer>
+</article>
 
-    <section class="content-header">
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="glyphicon glyphicon-gift"></i> Wishlist</a></li>
-            <li class="active">Liste des voeux</li>
-        </ol>
-    </section>
-
-
-    <button type="button" class="btn btn-success btn-lg">
-        <span class="glyphicon glyphicon-plus"></span> Ajouter un voeu
-    </button>
-
-
-    <section class="content">
-
-    <!-- Small boxes (Wish boxes) -->
-    <div class="row">
-
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat1">
-        <div class="inner">
-            <h3>
-                Voyage à Bora-bora
-            </h3>
-            
-            <p>
-                Histoire de découvrir les merveilles des plages de sable fin
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-globe"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
+        <article class="deco">
+	<header>
+		Déco
+	</header>
+	<h2>
+		Un miroir de salle de bain
+	</h2>
+	<footer>
+		<a href="#">Lien</a>
+  		<a href="#">Modifier</a>
+  		<a href="#">Supprimer</a>
+	</footer>
+</article>
 
 
+</div>
+<div>
+        <article class="cuisine">
+	<header>
+		Cuisine
+	</header>
+	<h2>
+		Un thermomix
+	</h2>
+	<footer>
+		<a href="#">Lien</a>
+  		<a href="#">Modifier</a>
+  		<a href="#">Supprimer</a>
+	</footer>
+</article>
+
+        <article class="culture">
+	<header>
+		Culture
+	</header>
+	<h2>
+		Comment parler du racisme aux enfants ?
+	</h2>
+	<footer>
+		<a href="#">Lien</a>
+  		<a href="#">Modifier</a>
+  		<a href="#">Supprimer</a>
+	</footer>
+</article>
+
+        <article class="jardinage">
+	<header>
+		Jardinage
+	</header>
+	<h2>
+		Une bétonnière pour faire du béton avec mes gendres
+	</h2>
+	<footer>
+		<a href="#">Lien</a>
+  		<a href="#">Modifier</a>
+  		<a href="#">Supprimer</a>
+	</footer>
+</article>
+
+</div>
+        
+</main>
     
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat2">
-        <div class="inner">
-            <h3>
-                Hunger Games
-            </h3>
-            
-            <p>
-                Un arcs, des flèches, des écureils et des glands
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-film"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat3">
-        <div class="inner">
-            <h3>
-                Piña Colada
-            </h3>
-            
-            <p>
-                Parce que la vie est plus douce avec une pointe de Rhum
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-glass"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat4">
-        <div class="inner">
-            <h3>
-                Dafte Pounk
-            </h3>
-            
-            <p>
-                Harder, better, faster, stronger
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-music"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat5">
-        <div class="inner">
-            <h3>
-                Dîner au restaurant entre amis
-            </h3>
-            
-            <p>
-                Parceque c'est super chouette les amis quand-même, non ?
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-cutlery"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat6">
-        <div class="inner">
-            <h3>
-                Une agrapheuse pour le travail
-            </h3>
-            
-            <p>
-                Cause pink is forever
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-paperclip"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat7">
-        <div class="inner">
-            <h3>
-                Une véranda pour le jardin qui serait joli pour améliorer un peu notre petite villa bouscataise
-            </h3>
-            
-            <p>
-                Arrrrrrgent ! Pour augmenter la valeur de la maison :)
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-home"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat8">
-        <div class="inner">
-            <h3>
-                Boing 747
-            </h3>
-            
-            <p>
-                Si Hollande en a un, pourquoi pas moi ?
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-plane"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat9">
-        <div class="inner">
-            <h3>
-                Téléphone
-            </h3>
-            
-            <p>
-                Vive la société de consommation !
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-phone"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat10">
-        <div class="inner">
-            <h3>
-                Téléphone
-            </h3>
-            
-            <p>
-                Vive la société de consommation !
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-phone"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat11">
-        <div class="inner">
-            <h3>
-                Téléphone
-            </h3>
-            
-            <p>
-                Vive la société de consommation !
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-phone"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat12">
-        <div class="inner">
-            <h3>
-                Téléphone
-            </h3>
-            
-            <p>
-                Vive la société de consommation !
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-phone"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat13">
-        <div class="inner">
-            <h3>
-                Téléphone
-            </h3>
-            
-            <p>
-                Vive la société de consommation !
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-phone"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-    
-        <div class="col-lg-4 col-sm-6 col-xs-12">
-    <!-- small box -->
-    <div class="small-box bg-cat14">
-        <div class="inner">
-            <h3>
-                Téléphone
-            </h3>
-            
-            <p>
-                Vive la société de consommation !
-            </p>
-            
-        </div>
-        <div class="icon">
-            <i class="glyphicon glyphicon-phone"></i>
-        </div>
-        <div class="small-box-footer">
-        <a href="#" class="small-box-footer">Détails</a>
-        <a href="#" class="small-box-footer">Supprimer</a>
-        </div>
-    </div>
-</div> 
-
-
-
-    </div>
     <!-- /.row of small boxes -->
 
 
-    </section>
-    </div>
-    <!-- /.container -->
-
-
-    <!-- build:js scripts/vendor.js -->
-<!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
-
-<!-- build:js scripts/plugins.js -->
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
-<!-- endbuild -->
-
-<!-- build:js({app,.tmp}) scripts/main.js -->
-<script src="scripts/main.js"></script>
-<!-- endbuild -->
-
+    
     </body>
 </html>
