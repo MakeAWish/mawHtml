@@ -223,7 +223,7 @@ aside {
 /*********************************************************************************************************************/
 
 main {
-    display: flex; /* Créer un contexte flexible pour l'agencement horizontal */
+    display: flex; /* Créer un contexte flexible pour l'agencement horizontal bien distribué */
     flex-direction: row; /* horizontal */
     flex-wrap: wrap; /* On passe à la ligne quand il faut ? */
 
@@ -239,7 +239,7 @@ main {
 
             flex: 1 0 20em; /* Occupe au minimum 20em de large, et sinon tout ce que tu peux pour tout remplir */
 
-            display: inline-flex; /* crée un contexte flex inline pour chaque article (alignement vertical) */
+            display: inline-flex; /* crée un contexte flex inline pour chaque article (agencement vertical bien distribué) */
             flex-direction: column; /* vertical */
             flex-wrap: wrap; /* on passe à la colonne suivant quand il faut ? */
 
