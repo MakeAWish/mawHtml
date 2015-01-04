@@ -314,7 +314,7 @@ main {
                 margin-bottom: 0;
                 text-align: center;
                 display: block; /* IE fix */
-                flex: 1; /* occupe la hauteur restante */
+                flex: 1; /* occupe la hauteur restante laissée par le header et le footer */
             }
 
             footer {
@@ -322,6 +322,7 @@ main {
                 flex-direction: row; /* affichage horizontal */
                 width: 100%;
                 background: url("../images/footer.png") silver repeat fixed;
+                text-align: center;
 
                 a {
                     flex: 1; /* occupe la largeur restante */
