@@ -223,23 +223,29 @@ aside {
 /*********************************************************************************************************************/
 
 main {
-    width: 80%;
-    float: left;
+    display: flex; /* Créer un contexte flexible pour l'agencement horizontal */
+    flex-direction: row; /* horizontal */
+    flex-wrap: wrap; /* On passe à la ligne quand il faut ? */
 
-    div {
-        width: 33.3333333333333333%;
-        float: left;
-        padding-left: 20px;
-
-        &:last-of-type {
-            padding-right: 20px;
-        }
-
+    /* Gouttières horizontales */
+    margin-left: -20px;
+    padding-right: 20px;
+    /* / Gouttières horizontales */
+    
         article {
-            width: 100%;
-            float: left;
+            /* Gouttières horizontales */
+            margin-left: 20px;
+            /* / Gouttières horizontales */
+
+            flex: 1 0 20em; /* Occupe au minimum 20em de large, et sinon tout ce que tu peux pour tout remplir */
+
+            display: inline-flex; /* crée un contexte flex inline pour chaque article (alignement vertical) */
+            flex-direction: column; /* vertical */
+            flex-wrap: wrap; /* on passe à la colonne suivant quand il faut ? */
+
             margin-top: 20px;
             border: 1px solid;
+
             @mixin colors($color) {
                 border-color: $color;
 
@@ -304,11 +310,14 @@ main {
             h2 {
                 clear: both;
                 padding: 0 20px 20px 20px;
-                font: normal normal normal normal 1.5em normal  'Sofia'; 
-                /* font-style / variant / weight / stretch / size / line-height / family */
+                font-size: 1.5em;
+                font-family: 'Sofia';
+                font-weight: normal;
                 border-bottom: 1px solid;
                 margin-bottom: 0;
                 text-align: center;
+                display: block; /* IE fix */
+                flex: 1; /* occupe la hauteur restante */
             }
 
             footer {
@@ -337,5 +346,3 @@ main {
 
         }
     }
-}
-
