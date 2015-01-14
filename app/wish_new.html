@@ -7,72 +7,62 @@
 <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
-@@include('/head.partial.html', {"description": "Coucou"})
+@@include('/head.partial.html', {"description": "Courircou"})
 <body>
-    @@include('/browsehappy.partial.html', {})
+    
     @@include('/navbar.in.partial.html', {})
 
-    <div class="container">
-        <section class="content-header">
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="glyphicon glyphicon-gift"></i> Voeux</a></li>
-                <li class="active">Ajouter un voeu</li>
-            </ol>
-        </section>
-        <section class="content">
+   
+<main>
 
-            <div class="row">
-                <section class="col-md-6 col-md-offset-3 col-xs-12">
+<article class="wish nocat">
+    <header>Nocat</header>
+    <div id="wish">
+        <div class="titre">
+            <label>Titre :</label>
+            <input type="text" name="titre" placeholder="Saisissez le titre de votre voeu"/>
+        </div>
 
-                    <!-- Form box -->
-                    <div class="box box-info">
-                        <div class="box-header">
-                            <h3 class="box-title">Nouveau souhait</h3>
-                        </div>
-                        <div class="box-body">
-                            <form role="form">
-                                <div class="box-body">
-                                    <div class="form-group">
-                                        <label for="title">Titre</label>
-                                        <input type="text"
-                                               class="form-control"
-                                               id="title"
-                                               placeholder="Ce que j'aimerais bien">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <textarea class="form-control"
-                                                  id="description"
-                                                  placeholder="Plus d'informations sur ce souhait"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="category">Catégorie</label>
-                                        <select class="form-control" id="category">
-                                            <option value="Default">Catégorie</option>
-                                            <option value="Enfants">Enfants</option>
-                                            <option value="Jeux">Jeux</option>
-                                            <option value="Bricolage">Bricolage</option>
-                                            <option value="Cuisine">Cuisine</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- /.box-body -->
+        <div class="lien">
+            <label>Lien :</label>
+            <input type="hyperlink" name="lien" />
+        </div>
 
-                                <div class="box-footer">
-                                    <button type="submit" class="btn btn-primary">Valider</button>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                </section>
-            </div>
-            <!-- /.row of large boxes -->
+        <div class="description">
+            <label>Description :</label>
+            <textarea rows="5" placeholder="Vous pouvez ajouter une description ou des précisions"></textarea>
+        </div>
 
-        </section>
+        <div class="categorie">
+            <label>Catégorie :</label>
+            <select name="categorie">
+               <option value="voyage">Voyage</option>
+               <option value="multimedia">Multimedia</option>
+               <option value="animaux">Animaux</option>
+               <option value="sport">Sport</option>
+               <option value="mode">Mode</option>
+               <option value="deco">Déco</option>
+               <option value="cuisine">Cuisine</option>
+               <option value="culture">Culture</option>
+               <option value="jardinage">Jardinage</option>
+           </select>
+        </div>
+
+        <div class="importance">
+            <label>Importance</label>
+            <select name="importance">
+               <option value="vitale">Vitale</option>
+               <option value="envie">J'en ai envie</option>
+               <option value="souhait" selected>Pourquoi pas ?</option>
+           </select>
+        </div>
+
     </div>
-    <!-- /.container -->
+    <footer>
+        <a href="#">Valider</a>
+        <a href="#">Annuler</a>
+    </footer>
+</article>
 
-    @@include('/footer.partial.html', {})
+</main>
 </body>
-</html>
