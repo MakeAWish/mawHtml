@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <title>Make A Wish - Index</title>
-    <meta name="description" content="Coucou">
+    <meta name="description" content="Courircou">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -34,156 +34,75 @@
 </head>
 
 <body>
-
-<nav>
+    
+    <nav>
   <h1>Make a wish</h1>
 </nav>
 
-<aside>
-    <p><a href="#">Ajouter un voeu</a></p>
-    <p>Filtrer par catégorie :</p>
-    <ul>
-        <li><input type="checkbox" name="jeux"> <label for "jeux">Jeux</label></li>
-        <li><input type="checkbox" name="culture"> <label for "jeux">Culture</label></li>
-        <li><input type="checkbox" name="cuisine"> <label for "jeux">Cuisine</label></li>
-        <li><input type="checkbox" name="mode"> <label for "jeux">Mode</label></li>
-    </ul>
 
-    <p>Wishlists :</p>
-    <ol>
-      <li><input name="wl" type="radio"><label>Ma wishlist</label></li>
-      <li><input name="wl" type="radio"><label>Anne-Julie</label></li>
-      <li><input name="wl" type="radio"><label>Annie</label></li>
-      <li><input name="wl" type="radio"><label>Aurore</label></li>
-      <li><input name="wl" type="radio"><label>Boris</label></li>
-      <li><input name="wl" type="radio"><label>Carole</label></li>
-      <li><input name="wl" type="radio"><label>Catherine</label></li>
-      <li><input name="wl" type="radio"><label>Christophe</label></li>
-      <li><input name="wl" type="radio"><label>Fabien</label></li>
-      <li><input name="wl" type="radio"><label>Francis</label></li>
-      <li><input name="wl" type="radio"><label>Hélène</label></li>
-      <li><input name="wl" type="radio"><label>Jean-David</label></li>
-      <li><input name="wl" type="radio"><label>Philippe</label></li>
-      <li><input name="wl" type="radio"><label>Sébastien</label></li>
-      <li><input name="wl" type="radio"><label>Zach-Gaby</label></li>
+   
+<main>
 
-    </ol>  
-
-</aside>
-
-
-
-<div class="container">
-    <section class="content-header">
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="glyphicon glyphicon-gift"></i> Voeux</a></li>
-            <li class="active">Ajouter un voeu</li>
-        </ol>
-    </section>
-    <section class="content">
-
-        <div class="row">
-            <section class="col-md-6 col-md-offset-3 col-xs-12">
-
-                <!-- Form box -->
-                <div class="box box-info">
-                    <div class="box-header">
-                        <h3 class="box-title">Mon souhait</h3>
-                    </div>
-                    <div class="box-body">
-                        <form role="form">
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label for="title">Titre</label>
-                                    <input type="text"
-                                           class="form-control"
-                                           id="title"
-                                           placeholder="Ce que j'aimerais bien" value="Un camping-car miniature">
-                                </div>
-                                <div class="form-group">
-                                    <label for="description">Description</label>
-                                    <textarea class="form-control"
-                                              id="description"
-                                              placeholder="Plus d'informations sur ce souhait">Un camping-car au 1/16e pour Zach</textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="category">Catégorie</label>
-                                    <select class="form-control" id="category">
-                                        <option value="Default">Catégorie</option>
-                                        <option value="Enfants" selected="selected">Enfants</option>
-                                        <option value="Jeux">Jeux</option>
-                                        <option value="Bricolage">Bricolage</option>
-                                        <option value="Cuisine">Cuisine</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- /.box-body -->
-
-                            <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">Confirmer les modifications</button>
-                                <button type="button" class="btn btn-warning">Annuler les modifications</button>
-                                <button type="button"
-                                        data-toggle="modal"
-                                        data-target="#deleteModal"
-                                        class="btn btn-danger">Supprimer le voeu
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-            </section>
+<article class="wish voyage">
+    <header>Voyage</header>
+    <div id="wish">
+        <div class="titre">
+            <label>Titre :</label>
+            <input type="text" name="titre" placeholder="Voyage à Bora Bora"/>
         </div>
-        <!-- /.row of large boxes -->
 
-    </section>
-</div>
-<!-- /.container -->
-
-<!-- Deletion Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Êtes-vous sûr ?</h4>
-            </div>
-            <div class="modal-body">
-                Êtes-vous sûr de vouloir supprimer ce voeu ?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Non, ne pas supprimer</button>
-                <button type="submit" class="btn btn-danger">Oui, supprimer</button>
-            </div>
+        <div class="lien">
+            <label>Lien :</label>
+            <input type="hyperlink" name="lien" />
         </div>
+
+        <div class="description">
+            <label>Description :</label>
+            <textarea rows="5">J'ai envie de partir dans une petite maison sur pilotis dans un endroit paradisiaque pour oublier les vieux et les maladies de l'hiver et pouvoir plonger dans l'eau turquoise et transparente et chaude et voir des petits poissons toute la journée sans que personne ne vienne me déranger</textarea>
+        </div>
+
+        <div class="categorie">
+            <label>Catégorie :</label>
+            <select name="categorie">
+               <option value="voyage">Voyage</option>
+               <option value="multimedia">Multimedia</option>
+               <option value="animaux">Animaux</option>
+               <option value="sport">Sport</option>
+               <option value="mode">Mode</option>
+               <option value="deco">Déco</option>
+               <option value="cuisine">Cuisine</option>
+               <option value="culture">Culture</option>
+               <option value="jardinage">Jardinage</option>
+           </select>
+        </div>
+
+        <div class="importance">
+            <label>Importance</label>
+            <select name="importance">
+               <option value="vitale">Vitale</option>
+               <option value="envie">J'en ai envie</option>
+               <option value="souhait">Pourquoi pas ?</option>
+           </select>
+        </div>
+
     </div>
-</div>
+    <footer>
+        <a href="#">Valider</a>
+        <a href="#">Annuler</a>
+    </footer>
+</article>
 
-<!-- build:js scripts/vendor.js -->
-<!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
+<section class="comment">
+    <h3>Commentaires</h3>
+    <h4>De : Aurore</h4>
+    <h4 class="date">Du : 03/02/2015</h4>
+    <p>Moi je m'en fous, je suis déjà sur une île paradisiaque remplie de bestioles chelous et léthales au possible, et je m'éclate en découpant des petits enfants et en manipulant des disques de Petri :)</p>
+    <h4>De : Boris</h4>
+    <h4 class="date">Du : 06/02/2015</h4>
+    <p>Moi je trouve ça génial et je veux partir aussi et je vais d'ailleurs l'ajouter à ma liste. A vos portefeuilles !!!</p>
+    <textarea name="commentaire" id="comment"></textarea>
+    <input type="submit" value="Commenter" />
+</section>
 
-<!-- build:js scripts/plugins.js -->
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
-<!-- endbuild -->
-
-<!-- build:js({app,.tmp}) scripts/main.js -->
-<script src="scripts/main.js"></script>
-<!-- endbuild -->
-
+</main>
 </body>
-</html>

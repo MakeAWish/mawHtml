@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <title>Make A Wish - Index</title>
-    <meta name="description" content="Coucou">
+    <meta name="description" content="Courircou">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -39,207 +39,36 @@
   <h1>Make a wish</h1>
 </nav>
 
-<aside>
-    <p><a href="#">Ajouter un voeu</a></p>
-    <p>Filtrer par catégorie :</p>
-    <ul>
-        <li><input type="checkbox" name="jeux"> <label for "jeux">Jeux</label></li>
-        <li><input type="checkbox" name="culture"> <label for "jeux">Culture</label></li>
-        <li><input type="checkbox" name="cuisine"> <label for "jeux">Cuisine</label></li>
-        <li><input type="checkbox" name="mode"> <label for "jeux">Mode</label></li>
-    </ul>
+   
+<main>
 
-    <p>Wishlists :</p>
-    <ol>
-      <li><input name="wl" type="radio"><label>Ma wishlist</label></li>
-      <li><input name="wl" type="radio"><label>Anne-Julie</label></li>
-      <li><input name="wl" type="radio"><label>Annie</label></li>
-      <li><input name="wl" type="radio"><label>Aurore</label></li>
-      <li><input name="wl" type="radio"><label>Boris</label></li>
-      <li><input name="wl" type="radio"><label>Carole</label></li>
-      <li><input name="wl" type="radio"><label>Catherine</label></li>
-      <li><input name="wl" type="radio"><label>Christophe</label></li>
-      <li><input name="wl" type="radio"><label>Fabien</label></li>
-      <li><input name="wl" type="radio"><label>Francis</label></li>
-      <li><input name="wl" type="radio"><label>Hélène</label></li>
-      <li><input name="wl" type="radio"><label>Jean-David</label></li>
-      <li><input name="wl" type="radio"><label>Philippe</label></li>
-      <li><input name="wl" type="radio"><label>Sébastien</label></li>
-      <li><input name="wl" type="radio"><label>Zach-Gaby</label></li>
+<article class="wish voyage">
+    <header>Voyage</header>
+    <div id="wish">
+        <h3>Voyage à Bora Bora</h3>
+        <a href="#">Suivez le lien !</a>
+        <p>J'ai envie de partir dans une petite maison sur pilotis dans un endroit paradisiaque pour oublier les vieux et les maladies de l'hiver et pouvoir plonger dans l'eau turquoise et transparente et chaude et voir des petits poissons toute la journée sans que personne ne vienne me déranger</p>
+        <p>Importance : vitale</p>
+    </div>
+    <footer>
+        <a href="#">Commenter</a>
+        <a href="#">Offrir</a>
+    </footer>
+</article>
 
-    </ol>  
+<section class="comment">
+    <h3>Commentaires</h3>
+    <h4>De : Aurore</h4>
+    <h4 class="date">Du : 03/02/2015</h4>
+    <p>Moi je m'en fous, je suis déjà sur une île paradisiaque remplie de bestioles chelous et léthales au possible, et je m'éclate en découpant des petits enfants et en manipulant des disques de Petri :)</p>
+    <h4>De : Boris</h4>
+    <h4 class="date">Du : 06/02/2015</h4>
+    <p>Moi je trouve ça génial et je veux partir aussi et je vais d'ailleurs l'ajouter à ma liste. A vos portefeuilles !!!</p>
+    <textarea name="commentaire" id="comment"></textarea>
+    <input type="checkbox" name="comment" />
+    <label for "comment">Annie peut voir ce commentaire</label>
+    <input type="submit" value="Commenter" />
+</section>
 
-</aside>
-
-
-
-<div class="container">
-    <section class="content-header">
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="glyphicon glyphicon-gift"></i> Voeux</a></li>
-            <li class="active">Ajouter un voeu</li>
-        </ol>
-    </section>
-    <section class="content">
-
-        <div class="row">
-            <section class="col-md-6 col-xs-12">
-
-                <!-- Form box -->
-                <div class="box box-info">
-                    <div class="box-header">
-                        <h3 class="box-title">Mon souhait</h3>
-                    </div>
-                    <div class="box-body">
-                        <form role="form">
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label for="title">Titre</label>
-                                    <input type="text" class="form-control" id="title"
-                                           value="Etre heureux comme un rat des champs">
-                                </div>
-                                <div class="form-group">
-                                    <label for="description">Description</label>
-                                    <textarea class="form-control"
-                                              id="description">Courir tout nu dans les champs de blé</textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="category">Catégorie</label>
-                                    <select class="form-control" id="category">
-                                        <option value="Default">Catégorie</option>
-                                        <option value="Enfants">Enfants</option>
-                                        <option value="Jeux">Jeux</option>
-                                        <option value="Bricolage" selected="selected">Bricolage</option>
-                                        <option value="Cuisine">Cuisine</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- /.box-body -->
-
-                            <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">Modifier</button>
-                                <button type="submit" class="btn btn-danger">Supprimer</button>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-            </section>
-            <section class="col-md-6 col-xs-12">
-                <!-- Chat box -->
-                <div class="box box-success">
-                    <div class="box-header">
-                        <h3 class="box-title"><i class="glyphicon glyphicon-comment"></i> Discussion</h3>
-
-                        <div class="box-tools pull-right" data-toggle="tooltip" title="" data-original-title="Status">
-                            <div class="btn-group" data-toggle="btn-toggle">
-                                <button type="button" class="btn btn-default btn-sm active"><i
-                                        class="glyphicon glyphicon-stop text-green"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i
-                                        class="glyphicon glyphicon-stop text-red"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slimScrollDiv">
-                        <div class="box-body chat" id="chat-box">
-                            <!-- chat item -->
-                            <div class="item">
-                                <img src="./images/avatars/assassin_avatar.png" alt="user image" class="online">
-
-                                <p class="message">
-                                    <a href="#" class="name">
-                                        <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>
-                                            2:15
-                                        </small>
-                                        Ezio Auditore Da Firente
-                                    </a>
-                                    Moi j'aurais bien buté un ou deux romains, quand même, pour l'exemple. Non mais
-                                    c'est quoi cette société policée où on ne peut plus sortir sa lame et faire une
-                                    carnage sans que ça ne provoque une émeute ?!
-                                </p>
-                                <!-- /.attachment -->
-                            </div>
-                            <!-- /.item -->
-                            <!-- chat item -->
-                            <div class="item">
-                                <img src="./images/avatars/mom_avatar.png" alt="user image" class="offline">
-
-                                <p class="message">
-                                    <a href="#" class="name">
-                                        <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>
-                                            5:15
-                                        </small>
-                                        Mum
-                                    </a>
-                                    Coucou mes chéris, c'est pour vous dire que ce soir, c'est à 19h. N'en parler pas
-                                    aux autres, c'est une surprise. Quand même, je ne sais pas si c'est au bon endroit
-                                    que j'écris pour envoyer un mail. Si je clique sur "Envoyer", c'est bon ?
-                                </p>
-                            </div>
-                            <!-- /.item -->
-                            <!-- chat item -->
-                            <div class="item">
-                                <img src="./images/avatars/nurse_avatar.png" alt="user image" class="offline">
-
-                                <p class="message">
-                                    <a href="#" class="name">
-                                        <small class="text-muted pull-right"><i class="glyphicon glyphicon-time"></i>
-                                            5:30
-                                        </small>
-                                        Mamaine
-                                    </a>
-                                    Non mais celui-là, quelle grosse tarlouze ! Je vais devoir lui palper les coroñes
-                                    pour vérifier qu'elles sont bien là.
-                                </p>
-                            </div>
-                            <!-- /.item -->
-                        </div>
-                    </div>
-                    <!-- /.chat -->
-                    <div class="box-footer">
-                        <div class="input-group">
-                            <input class="form-control" placeholder="Type message...">
-
-                            <div class="input-group-btn">
-                                <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.box (chat box) -->
-            </section>
-        </div>
-        <!-- /.row of large boxes -->
-
-    </section>
-</div>
-<!-- /.container -->
-
-<!-- build:js scripts/vendor.js -->
-<!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
-
-<!-- build:js scripts/plugins.js -->
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
-<!-- endbuild -->
-
-<!-- build:js({app,.tmp}) scripts/main.js -->
-<script src="scripts/main.js"></script>
-<!-- endbuild -->
-
+</main>
 </body>
-</html>
