@@ -309,8 +309,8 @@ main {
                 a {
                     flex: 1; /* occupe la largeur restante */
                     transition: flex .5s;
+                    padding: 0.3em 0em;
                     display: block;
-                    padding: .3em .3em .3em 1.5em;
                     color: gray;
                     text-decoration: none;
                     white-space: nowrap;
