@@ -1,0 +1,138 @@
+1. Page de login
+
+Dès qu'on se connecte, on tombe sur la page "wishlist" qui liste nos voeux par ordre d'importance (et éventuellement date de
+création)
+
+2. La barre de navigation
+
+Cette barre de navigation ne change pas quelle que soit la page sur laquelle on se trouve
+
+	A. Ajouter un voeu
+
+		Ce lien sera accessible depuis n'importe quelle page du site comme ça on peut ajouter un voeu où qu'on se trouve sur
+		le site
+
+	B. Les filtres
+
+		Je peux filtrer mes voeux ou ceux des autres listes par catégorie (les voeux sont par défaut affichés par ordre d'importance
+		donc toute catégorie confondue). Ensuite, à l'intérieur d'un filtre, ils seront classés par ordre d'importance, et éventuellement, dans cet ordre d'importance, par date de création. 
+
+	C. Les wishlists
+
+		i. Ma wishlist
+
+			Graphiquement, ce lien se différencie des autres pour bien le distinguer, il s'affiche tout en haut des choix
+
+		ii. Les wishlists des autres gens
+
+			Il va falloir créer des groupes, une personne ne peut appartenir qu'à un seul groupe, mais elle peut avoir accès aux listes des gens de plusieurs groupes (le sien forcément, plus d'autres). Pour le moment, voici ce que j'ai en tête (fortement suggéré par l'amour réciproques de nos mères) : 
+
+			 - Groupe Schapira :
+			 	 - Boris
+			 	 - Hélène
+			 	 - Zach
+			 	 - Gaby
+
+			 - Groupe Hamon : 
+			 	- Carole
+			 	- Christophe
+
+			 - Groupe Schapîle :
+			 	- Philippe
+			 	- Catherine
+			 	- Anne-Julie
+			 	- Jean-David
+
+			 - Groupe Bouty : 
+			 	- Aurore
+			 	- Fabien
+			 	- Annie
+			 	- Francis
+
+			L'idée étant ensuite d'ajouter aussi des groupes d'amis, ça pourrait être super sympa. 
+
+			Donc par défaut, on voit au moins les listes des gens de son propre groupe, puis éventuellement celles de gens appartenant à d'autres groupes.
+
+			!!!!!! Question à régler : comment on fait pour les groupes ? Est-ce qu'à la création d'un compte, on désigne d'office le ou les groupes auxquels a accès l'utilisateur ? ça va tant qu'on gère nous même donc pour le début, mais après, à voir dans une V15 (pour le moment on va faire au plus vite, c'est à dire : c'est nous qui décidons les groupes d'appartenance à la création des comptes). 
+
+			Graphiquement, je pensais là encore faire au plus simple : l'utilisateur ne voit pas les groupes auxquels il appartient, il voit juste la liste des gens qui font partie de ces groupes par ordre alphabétique. 
+
+
+3. Ma wishlist
+
+C'est la page sur laquelle apparaissent tous mes voeux, triés par défaut par ordre d'importance (et de création ?). Je peux ensuite réaliser plusieurs actions (je reparle pas des filtres, ça fait partie du titre 2. Barre de navigation). 
+
+Chaque voeu est composé de plusieurs éléments : 
+
+ - une catégorie
+ - un titre
+ - un lien
+ - une description (qu'on a préféré ne pas faire apparaître sur cette page de listing)
+ - une importance (qu'on a préféré ne pas faire apparaître la non plus)
+
+ 	A. Créer un voeu
+
+		On y accède en cliquant sur "Ajouter un voeu" dans le menu de navigation. 
+
+		Cette page permet de... ben comme son nom l'indique d'ajouter un voeu qui viendra s'ajouter dans la wishlist. On tombe sur un formulaire où l'utisateur doit / peut remplir différents champs : 
+
+			i. Champs obligatoires
+
+				Il s'agit des champs : "titre" (nombre de caractères maximum à prévoir) et "catégorie" (DDL)
+
+			ii. Champs facultatifs
+
+				Il s'agit des champs : "lien" (s'il n'y en a pas, le champs "lien" apparaitra toujours dans la page qui liste les voeux mais il ne sera pas cliquable), "description" (oui parfois, le titre est bien suffisant, on est pas des politiciens, on ne va pas écrire pour écrire) et "importance" (si l'utilisateur préfère ne pas remplir ce champs, par défaut, l'importance sera minimale)
+
+
+	B. Modifier un voeu
+
+		On y accède en cliquant soit sur le titre du voeu, soit sur le lien "modifier" en footer du voeu.
+
+		On arrive sur la même page que décrite dans le paragraphe A. - la seule différence étant que les champs sont déjà remplis avec les infos du voeu avant modification. L'utilisateur peut alors modifier les champs.
+
+		!!!!! Voir comment faire pour que l'utilisateur ne puisse pas modifier le voeu quand celui-ci a déjà été sélectionné pour être offert, sans toutefois que cela apparaisse de manière trop claire sur la page d'accueil. Peut-être en ouvrant la page de modification, mettre au lieu du formulaire, un message ?
+
+
+	C. Supprimer un voeu
+
+		On y accède en cliquant sur "Supprimer" dans le footer. Un simple message de confirmation ou annulation apparait. 
+
+		!!!!! Voir comment faire pour que l'utilisateur ne puisse pas supprimer le voeu quand celui-ci a déjà été sélectionné pour être offert, sans toutefois que cela apparaisse de manière trop claire sur la page d'accueil. Peut-être en ouvrant la page de suppression ?
+
+
+4. La wishlist de mes "amis"
+
+On y accède en sélectionnant une personne (bouton radio) dans le menu de navigation. On arrive sur une page qui liste les voeux de la même manière que ma propore wishlist. La seule différence vient du footer de chaque voeu. 
+
+	A. Le voeu n'a été sélectionné par personne
+
+		Le footer laisse apparaître le lien "offrir" => on tombe sur une simple page de confirmation.
+
+	B. Le voeu a été sélectionné
+
+		i. Par l'utilisateur lui-même
+
+			Le footer laisse apparaître le lien "ne plus offrir" par exemple => on tombe sur une simple page de confirmation
+
+		ii. Par un autre contact
+
+			Le footer laisse apparaître le lien "offert" 
+
+	C. Commenter
+
+		Il est possible de déposer des commentaires et donc d'entamer une discussion avec les autres personnes qui ont accès à la liste en question. Ainsi, quand un autre utilisateur a décidé d'offir un voeu on peut toujours discuter avec cette personne pour un éventuel partage etc. C'est notamment là qu'on peut voir qui a offert le cadeau. 
+
+		On tombe sur la même page en cliquant sur "commenter" que quand on clique sur le titre du voeu. 
+
+		!!!!!! Quand on voudra aller plus loin, on pourra peut-être lier les commentaires avec l'adresse mail pour que l'utilisateur reçoive une alerte en cas de commentaire sur un voeu ? à voir plus tard
+
+
+
+
+
+
+
+
+
+	
