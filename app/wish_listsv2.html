@@ -1,0 +1,40 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+@@include('/head.partial.html', {"description": "Coucou"})
+<body>
+    
+    @@include('/header.html', {})
+    @@include('/navbar.in.partial.html', {})
+
+
+<!-- Penser à classer les voeux par ordre d'importance dès l'affichage, ensuite, quand l'utilisateur va décider
+de filtrer les voeux par catégorie : si on peut, il faudrait maintenir l'ordre d'importance à l'intérieur de cette 
+catégorie. Si plusieurs voeux sont de même importance, on peut faire par date de création par exemple -->
+   
+<main>
+
+        @@include('/wishboxes.html', {"category": "Voyage", "title": "Voyage à Bora Bora", "class":"voyage"})
+        @@include('/wishboxes.html', {"category": "Multimédia", "title": "Un nouveau téléphone hyper zazou qui fait plein de trucs", "class":"multimedia"})
+        @@include('/wishboxes.html', {"category": "Animaux", "title": "Une tortue", "class":"animaux v2"})
+        @@include('/wishboxes.html', {"category": "Mode", "title": "Des millions de chaussures et de sacs à main", "class":"mode v2"})
+        @@include('/wishboxes.html', {"category": "Sport", "title": "Un snowboard", "class":"sport v2"})
+        @@include('/wishboxes.html', {"category": "Déco", "title": "Un miroir de salle de bain", "class":"deco v2"})
+        @@include('/wishboxes.html', {"category": "Cuisine", "title": "Un thermomix", "class":"cuisine v2"})
+        @@include('/wishboxes.html', {"category": "Culture", "title": "Comment parler du racisme aux enfants ?", "class":"culture v2"})
+        @@include('/wishboxes.html', {"category": "Jardinage", "title": "Une bétonnière pour faire du béton avec mes gendres", "class":"jardinage v2"})
+
+</main>
+    
+    <!-- /.row of small boxes -->
+
+
+    
+    </body>
+</html>

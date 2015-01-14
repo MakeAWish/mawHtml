@@ -89,19 +89,6 @@ section {
 }
 
 
-
-
-/**** Voir si utile *****/
-
-.typein input:valid {
-    box-shadow: 0 0 2px 1px green;
-}
-
-.typein input:invalid {
-    box-shadow: 0 0 2px 1px red;
-}
-
-
 /*********************************************************************************************************************/
 /************************************ Barre de navigation horizontale  ***********************************************/
 /*********************************************************************************************************************/
@@ -224,6 +211,11 @@ main {
                 flex-wrap: wrap; /* on passe à la colonne suivant quand il faut ? */
             }
 
+            @mixin background-opacity($color, $opacity: 0.3) {
+                background-color: $color; /* fallback pourri */
+                background-color: rgba($color, $opacity);
+            }
+
             @mixin colors($color) {
                 border-color: $color;
 
@@ -233,6 +225,27 @@ main {
 
                 header {
                     background-color: $color;
+                }
+
+                &.offertmoi {
+                    h2 {
+                        @include background-opacity($color, 0.2);
+                    }
+                }
+
+/* Attention ne sert que pour la page wishlist v2, il faudra supprimer tout ça si les gens ne retiennent pas cette V2 */
+                &.v2 {
+                    h2 {
+                        @include background-opacity($color, 0.2);
+                    }
+                }
+
+/* Fin de l'option v2 */
+            }
+
+            &.offertautre {
+                h2 {
+                    background-color: silver;
                 }
             }
 
@@ -294,6 +307,8 @@ main {
                 font-weight: normal;
                 border-bottom: 1px solid;
                 margin-bottom: 0;
+                margin-top: 0;
+                padding-top: 20px;
                 text-align: center;
                 display: block; /* IE fix */
                 flex: 1; /* occupe la hauteur restante laissée par le header et le footer */
@@ -433,3 +448,4 @@ article {
         color: #d8d8d8;
     }
 }
+
