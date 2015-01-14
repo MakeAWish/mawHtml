@@ -387,9 +387,34 @@ article {
     }
 
     textarea {
-        clear: both;
         margin: 10px auto;
         width: 100%;
     }
+      
+    label {
+        color: red;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+
+    input[type="submit"] {
+        display: block;
+        margin-top: 10px;
+    }
+        
 }
 
+/*********************************************************************************************************************/
+/************************************ Page de modification d'un voeu *************************************************/
+/*********************************************************************************************************************/
+
+.titre, .lien, .description, .categorie, .importance {
+    margin: 20px auto;
+    border: none;
+
+    textarea {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
